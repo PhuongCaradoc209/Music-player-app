@@ -31,6 +31,12 @@ if (song.pause()) {
     songImg.classList.add("paused");
 }
 
+song.addEventListener('timeupdate', function() {
+    if (song.currentTime === song.duration) {
+        nextSong();
+    }
+});
+
 progress.onchange = function () {
     song.play();
     song.currentTime = progress.value;
@@ -89,7 +95,6 @@ document.querySelectorAll('.song_card').forEach((song_card) => {
 });
 
 //FUNCTION
-
 function playMuic() {
     song.play();
     ctrlIcon.classList.remove("fa-play");
