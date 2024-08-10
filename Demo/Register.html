@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="icon" type="image.png" href="Image\icon.png"/>
+    </head>
+    <body>
+        <h1>
+            Register
+        </h1>
+
+        <hr><br>
+
+        <form method="post" onsubmit="return confirmPassword()">
+            <label for="email">Email: </label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <br><br>
+
+            <label for="birthdate">Birthdate: </label>
+            <input type="date">
+            <br><br>
+
+            <label for="username">Username: </label>
+            <input type="username" id="username" placeholder="Enter your username" required>
+            <br><br>
+
+            <label for="password">Password: </label>
+            <input type="password" id="password" placeholder="Enter your password" minlength="6" maxlength="20" required>
+            <br><br>
+
+            <label for="password">Confirm password: </label>
+            <input type="password" id="confirm_password" placeholder="Confirm your password" required>
+
+            <p id="checkPassword" style="color: red;"></p>
+
+            <label for="select">Gender: </label>
+            <select name="gender" type="select">
+                <option id="male">Male</option>
+                <option id="female">Female</option>
+                <option id="other">Other</option>
+            </select>
+            <br><br>
+  
+            <label for="Favourite music genres"> Favourite music genres: </label><br>
+            
+            <input type="radio" value="pop" name="genres">
+            <label for="pop">Pop</label>
+
+            <input type="radio" value="rock" name="genres">
+            <label for="pop">Rock</label>
+
+            <input type="radio" value="jazz"name="genres">
+            <label for="pop">Jazz</label>
+
+            <input type="radio" value="classical" name="genres">
+            <label for="classical">Classical</label>
+
+            <input type="radio" value="other" id="other"name="genres">
+            <label for="other">Other</label>
+            <input type="text" id="otherText" placeholder="Enter other genres">
+
+            <br><br>
+            <input type="submit" value="Register" required>
+        </form>
+
+    </body>
+</html>
+
+<javascript>
+    <script>
+        function checkOther(radio){
+            var clicked = radio.checked;
+            if (clicked) {
+                
+            }
+        }
+
+
+        function confirmPassword() {
+            var pass = document.getElementById('password').value;
+            var confirm = document.getElementById('confirm_password').value;
+            var normalLetter = 0;
+            var capital = 0;
+            var symbol = 0;
+
+            const hasUpperCase = /[A-Z]/.test(pass);
+
+            const hasLowerCase = /[a-z]/.test(pass);
+
+            const hasSpecialCharacter = /[^a-zA-Z0-9]/.test(pass);
+
+            const hasNumber = /[0-9]/.test(pass);
+            
+            if(!hasUpperCase){
+                document.getElementById("checkPassword").innerHTML = "Password must has at least one uppercase";
+                return false;
+            }
+
+            if(!hasLowerCase){
+                document.getElementById("checkPassword").innerHTML = "Password must has at least one lowercase";
+                return false;
+            }
+
+            if(!hasSpecialCharacter){
+                document.getElementById("checkPassword").innerHTML = "Password must has at least one symbol";
+                return false;
+            }
+
+            if(!hasNumber){
+                document.getElementById("checkPassword").innerHTML = "Password must has at least one number";
+                return false;
+            }
+            
+            if (pass == confirm) {
+                window.location.href = 'Login.html';
+                return false;
+            }
+            document.getElementById("checkPassword").innerHTML = "Confirm password does not match. Please check again.";
+            return false;
+        }
+    </script>
+</javascript>

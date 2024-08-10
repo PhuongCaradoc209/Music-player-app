@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', Ysabeau SC, Mulish;
+}
+
+body{
+    background-image: url("Image/background_Login.gif");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.wrapper{
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login_Container{
+    position: relative;
+    width: 350px;
+    height: 530px;
+
+    border-radius: 20px;
+    border:1px solid;
+    
+    color: white;
+
+    background: transparent;
+    padding: 20px;
+    backdrop-filter: blur(25px);
+    box-shadow:
+    5px 5px 10px rgba(0, 0, 0, 0.147),
+    -5px -5px 10px rgba(0, 0, 0, 0.147),
+    5px -5px 10px rgba(0, 0, 0, 0.147),
+    -5px 5px 10px rgba(0, 0, 0, 0.147);
+}
+
+.login_heading_box{
+    width: 140px;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    margin-bottom: 40px;
+
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#login_heading-text{
+    margin-top: -15px;
+    font-size: 45px;
+    font-family: Ysabeau SC;
+}
+
+.input_box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 28px;
+    padding: 4px;
+    outline: none;
+}
+
+.input-field{
+    height: 42px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 18px;
+    padding-right: 9px;
+    padding-top: 9px;
+}
+
+.label{
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    transition: 0.2s;
+    color: gray;
+}
+
+.material-symbols-outlined{
+    position: absolute;
+    top: 14px;
+    left:  calc(100% - 38px);
+    color: rgb(66, 66, 66);
+}
+
+.input-field:focus ~ .label,
+.input-field:valid ~ .label {
+  background-color: #ACB1D6;
+  color: black;
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  height: 20px;
+  font-size: 13px;
+  border-radius: 30px;
+  padding: 4px 10px;
+}
+
+.input-field:valid ~ #input_box-clock {
+    display: none;
+}
+
+.warning_box{
+    margin: 8px;
+    color: red;
+}
+
+.remember-forgot{
+    margin: 18px;
+    width: calc(100%);
+    position: relative;
+    
+    left: 50%;
+    transform: translateX(-55%);
+    padding: -5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: #9db7fe;
+}
+
+a::hover{
+    text-decoration: underline;
+}
+
+.login_submit_box{
+    margin-top: 28px;
+    position: relative;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.login_submit{
+    width: 100%;
+    height: 40px;
+
+    border-radius: 20px;
+    border: none;
+    font-size: large;
+    font-weight: 500;
+    color: black;
+
+    background: linear-gradient(to left, #657cbd,#DBDFEA);
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.login_submit:hover{
+    transform: scale(1.02);
+    background: linear-gradient(to left, #1c419f,#838ccc);
+    color: white;
+}
+
+.signUp-box{
+    margin: 18px;
+    text-align: center;
+}
+
+.signUp{
+    margin-left: 8px;
+    background: transparent;
+    border: unset;
+    font-size: 15px;
+    font-weight:800;
+
+    cursor: pointer;
+    color: green;
+
+    transition: 0.2s;
+}
+
+.signUp:hover{
+    transform: scale(1.05);
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phonia - playing song</title>
+    <link rel="stylesheet" href="playSong.css" />
+
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ysabeau+SC:wght@1..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--ICON-->
+    <script
+      src="https://kit.fontawesome.com/c276420fe8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--PLAYING SONG-->
+    <audio class="song-audio" id="song">
+      <source />
+    </audio>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="playlist_box">
+        <div class="playlist_heading">
+          <div><p>PLAYLIST</p></div>
+          <div><p>Title</p></div>
+          <div id="playlist_heading-infor">
+            <p>Playlist owner</p>
+            <p>Song numbers</p>
+          </div>
+        </div>
+
+        <ul class="playlist_box-songs" id="playlist_box-songs">
+          <li class="song_card" id="song_card" name="card">
+            <div>
+              <p id="order">1</p>
+            </div>
+            <div id="song_card-image">
+              <img
+                id="song_card-image"
+                src="Image/Theres_Nothing_Holdin_Me_Back.jpg"
+                alt="Song image"
+              />
+            </div>
+            <div id="song_card-title-author">
+              <p>There's Nothing Holdin' Me Back</p>
+              <p>Shawn Mendes</p>
+            </div>
+            <div id="song_card-time">00:00</div>
+
+            <audio class="song-audio">
+              <source src="music/There's Nothing Holdin' Me Back.mp3  " />
+            </audio>
+          </li>
+
+          <li class="song_card" id="song_card" name="card">
+            <div>
+              <p id="order">2</p>
+            </div>
+            <div id="song_card-image">
+              <img
+                id="song_card-image"
+                src="Image/Middle_of_the_Night.jpg"
+                alt="Song image"
+              />
+            </div>
+            <div id="song_card-title-author">
+              <p>Middle of the Night</p>
+              <p>Elley Duhé</p>
+            </div>
+            <div id="song_card-time">00:00</div>
+
+            <audio class="song-audio">
+              <source src="music\Middle of the Night.mp3" />
+            </audio>
+          </li>
+
+          <li class="song_card" id="song_card" name="card">
+            <div>
+              <p id="order">3</p>
+            </div>
+            <div id="song_card-image">
+              <img
+                id="song_card-image"
+                src="Image/Shes_Crazy_but_She_s_Mine.jpg"
+                alt="Song image"
+              />
+            </div>
+            <div id="song_card-title-author">
+              <p>She's Crazy but She's Mine</p>
+              <p>Alex Sparrow</p>
+            </div>
+            <div id="song_card-time">00:00</div>
+
+            <audio class="song-audio">
+              <source src="music/She's Crazy but She's Mine.mp3" />
+            </audio>
+          </li>
+
+          <li class="song_card" id="song_card" name="card">
+            <div>
+              <p id="order">4</p>
+            </div>
+            <div id="song_card-image">
+              <img
+                id="song_card-image"
+                src="Image/Jar_of_Love.jpg"
+                alt="Song image"
+              />
+            </div>
+            <div id="song_card-title-author">
+              <p>Jar of Love</p>
+              <p>曲婉婷 (Qu Wanting)</p>
+            </div>
+            <div id="song_card-time">00:00</div>
+
+            <audio class="song-audio">
+              <source src="music/Jar of Love.mp3" />
+            </audio>
+          </li>
+
+          <li class="song_card" id="song_card" name="card">
+            <div>
+              <p id="order">5</p>
+            </div>
+            <div id="song_card-image">
+              <img
+                id="song_card-image"
+                src="Image/Giấc_Mơ_Của_Em_Suy_Ver.jpg"
+                alt="Song image"
+              />
+            </div>
+            <div id="song_card-title-author">
+              <p>Giấc Mơ Của Em (Suy Ver.)</p>
+              <p>MYLINA,fueled by boba</p>
+            </div>
+            <div id="song_card-time">00:00</div>
+
+            <audio class="song-audio">
+              <source src="music/Giấc Mơ Của Em (Suy Ver.).mp3" />
+            </audio>
+          </li>
+
+          <li class="song_card" id="song_card" name="card">
+            <div>
+              <p id="order">6</p>
+            </div>
+            <div id="song_card-image">
+              <img
+                id="song_card-image"
+                src="Image/sài_gòn_hôm_nay_mưa.jpg"
+                alt="Song image"
+              />
+            </div>
+            <div id="song_card-title-author">
+              <p>Sài gòn hôm nay mưa</p>
+              <p>JSOL x HOÀNG DUYÊN</p>
+            </div>
+            <div id="song_card-time">00:00</div>
+
+            <audio class="song-audio">
+              <source src="music/sài gòn hôm nay mưa.mp3" />
+            </audio>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="playing_box">
+        <div class="playing_box-overlay" id="playing_box-overlay"></div>
+        <div class="playing_heading">
+          <div id="playing_heading-titleSong">
+            <p></p>
+          </div>
+          <p id="playing_heading-author"></p>
+        </div>
+
+        <div class="song_record">
+          <img id="record" src="Image/record.png" alt="record" />
+          <img id="song-image" alt="Song image" />
+        </div>
+
+        <!-- <div class="option_bar">
+                    <i class="fa-regular fa-heart" style="color: #ffffff;"></i>
+                    <i class="fa-regular fa-comments" style="color: #ffffff;"></i>                
+                </div> -->
+        <div class="audio-bar">
+          <p id="left_timetrack">00:00</p>
+
+          <input type="range" value="0" id="progress" />
+          <p id="right_timetrack">00:00</p>
+        </div>
+
+        <div class="audio-control">
+          <div >
+            <i
+              class="fa-solid fa-backward-step fa-xl"
+              style="color: #ffffff"
+              title="previous"
+            ></i>
+          </div>
+
+          <div onclick="playPause()">
+            <i
+              class="fa-solid fa-play fa-xl"
+              style="color: #ffffff"
+              id="control-icon"
+              title="play"
+            ></i>
+          </div>
+
+          <div onclick="nextSong()">
+            <i
+              class="fa-solid fa-forward-step fa-xl"
+              style="color: #ffffff"
+              title="next"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <div class="lyric_box"></div>
+    </div>
+  </body>
+
+  <script src="playSong.js"></script>
+</html>
