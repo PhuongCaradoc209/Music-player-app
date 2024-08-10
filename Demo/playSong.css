@@ -52,6 +52,15 @@
     background: linear-gradient(to bottom, #5b6479, #2a2c30);
 }
 
+.playlist_heading::after{
+    content: "";
+    position: absolute;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    top: 14.75vh;
+    left: 9.25vw;
+}
+
 .playlist_heading div:nth-child(1){
     font-size: 12px;
     font-weight: 800;

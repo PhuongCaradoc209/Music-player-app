@@ -10,12 +10,13 @@ let songImg = document.getElementById("song-image");
 let left_timetrack = document.getElementById("left_timetrack");
 let right_timetrack = document.getElementById("right_timetrack");
 
+updatePlaylist_Heading();
+
 //SET UP 
 song.onloadedmetadata = function () {
     progress.max = song.duration;
     progress.value = song.currentTime;
 }
-
 
 if (song.play()) {
     setInterval(() => {
@@ -205,7 +206,23 @@ function nextSong() {
             }
         }
         i++; //turn to next song
-        updateSong(box.item(i));
+        if(i < box.length){
+            updateSong(box.item(i));
+        }
+        else{
+            progress.value = 0;
+            song.currentTime = 0;
+
+            ctrlIcon.classList.remove("fa-pause");
+            ctrlIcon.classList.add("fa-play");
+        
+            record.classList.remove("play");
+            songImg.classList.remove("play");
+        
+            record.classList.add("paused");
+            songImg.classList.add("paused");
+        }
+
     }
 }
 
@@ -222,4 +239,9 @@ function previousSong(){
         i--; //turn to next song
         updateSong(box.item(i));
     }
+}
+
+function updatePlaylist_Heading(){
+    let box = document.querySelectorAll('.song_card');
+    document.querySelector('#playlist_heading-infor p:nth-child(2)').innerHTML = (box.length).toString() + " songs";
 }
