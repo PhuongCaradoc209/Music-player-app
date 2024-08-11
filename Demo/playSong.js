@@ -1,14 +1,14 @@
-let currentCard = null;
+var currentCard = null;
 var song = document.getElementById("song");
 
-let progress = document.getElementById("progress");
-let ctrlIcon = document.getElementById("control-icon");
+var progress = document.getElementById("progress");
+var ctrlIcon = document.getElementById("control-icon");
 
-let record = document.getElementById("record");
-let songImg = document.getElementById("song-image");
+var record = document.getElementById("record");
+var songImg = document.getElementById("song-image");
 
-let left_timetrack = document.getElementById("left_timetrack");
-let right_timetrack = document.getElementById("right_timetrack");
+var left_timetrack = document.getElementById("left_timetrack");
+var right_timetrack = document.getElementById("right_timetrack");
 
 updatePlaylist_Heading();
 
@@ -203,7 +203,7 @@ function nextSong() {
                 break;
             }
         }
-        i++; //turn to next song
+        i++; 
         if(i < box.length){
             updateSong(box.item(i));
         }
@@ -234,14 +234,14 @@ function previousSong(){
                 break;
             }
         }
-        i--; //turn to next song
+        i--;
         updateSong(box.item(i));
     }
 }
 
 function updatePlaylist_Heading(){
     let box = document.querySelectorAll('.song_card');
-    document.querySelector('#playlist_heading-infor p:nth-child(2)').innerHTML = (box.length).toString() + " songs";
+    document.querySelector('#playlist_heading-infor span:nth-child(3)').innerHTML = (box.length).toString() + " songs";
 }
 
 function playlistVisible(){
@@ -263,8 +263,8 @@ function lyricsVisible(){
     var lyricsBox = document.getElementById('lyric_box');
     var playingBox = document.getElementById('playing_box');
 
-    console.log('lyricsBox:', lyricsBox); // Should not be null
-    console.log('playingBox:', playingBox); // Should not be null
+    console.log('lyricsBox:', lyricsBox); 
+    console.log('playingBox:', playingBox); 
 
     if (lyricsBox.classList.contains('hidden')) {
         lyricsBox.classList.remove('hidden');

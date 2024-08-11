@@ -31,8 +31,9 @@
           <div><p>PLAYLIST</p></div>
           <div><p>Title</p></div>
           <div id="playlist_heading-infor">
-            <p>Playlist owner</p>
-            <p>Song numbers</p>
+            <span><p>Playlist owner</p></span>
+            <span></span>
+            <span><p>Song numbers</p></span>
           </div>
         </div>
 
@@ -168,17 +169,18 @@
               <source src="music/sài gòn hôm nay mưa.mp3" />
             </audio>
           </li>
-
         </ul>
       </div>
 
       <div class="playing_lyrics_box" id="playing_lyrics_box">
         <div class="playing_box" id="playing_box">
           <div class="playing_header">
-            <i class="fa-solid fa-bars" 
-            style="color: #ffffff;" 
-            title="Playlist"
-            onclick="playlistVisible()"></i>
+            <i
+              class="fa-solid fa-bars"
+              style="color: #ffffff"
+              title="Playlist"
+              onclick="playlistVisible()"
+            ></i>
 
             <div class="playing_heading">
               <div id="playing_heading-titleSong">
@@ -187,55 +189,55 @@
               <p id="playing_heading-author"></p>
             </div>
 
-            <i class="fa-solid fa-ellipsis-vertical" 
-            style="color: #ffffff;"
-            title="More"></i>
+            <i
+              class="fa-solid fa-ellipsis-vertical"
+              style="color: #ffffff"
+              title="More"
+            ></i>
           </div>
-  
-          <div class="song_record" onclick="lyricsVisible()">
-            <img id="record" src="Image/record.png" alt="record" />
-            <img id="song-image" alt="Song image" />
-          </div>
-  
-          <!-- <div class="option_bar">
-                      <i class="fa-regular fa-heart" style="color: #ffffff;"></i>
-                      <i class="fa-regular fa-comments" style="color: #ffffff;"></i>                
-                  </div> -->
-          <div class="audio-bar">
-            <p id="left_timetrack">00:00</p>
-  
-            <input type="range" value="0" id="progress" />
-            <p id="right_timetrack">00:00</p>
-          </div>
-  
-          <div class="audio-control">
-            <div onclick="previousSong()">
-              <i
-                class="fa-solid fa-backward-step fa-xl"
-                title="Previous"
-              ></i>
+
+          <div class="song_record_box">
+            <div class="song_record" onclick="lyricsVisible()">
+              <img id="record" src="Image/record.png" alt="record" />
+              <img id="song-image" alt="Song image" />
             </div>
-  
-            <div onclick="playPause()">
-              <i
-                class="fa-solid fa-play fa-xl"
-                style="color: #ffffff"
-                id="control-icon"
-                title="Play"
-              ></i>
+          </div>
+
+          <div class="playing_box-features">
+            <div class="option_bar">
+              <i class="fa-regular fa-heart" style="color: #ffffff" title="Favourite"></i>
+              <i class="fa-regular fa-circle-down" style="color: #ffffff" title="Download"></i>
+              <i class="fa-regular fa-comments" style="color: #ffffff" title="Comments"></i>
             </div>
-  
-            <div onclick="nextSong()"">
-              <i
-                class="fa-solid fa-forward-step fa-xl"
-                title="Next"
-              ></i>
+
+            <div class="audio-bar">
+              <p id="left_timetrack">00:00</p>
+
+              <input type="range" value="0" id="progress" />
+              <p id="right_timetrack">00:00</p>
+            </div>
+
+            <div class="audio-control">
+              <div onclick="previousSong()">
+                <i class="fa-solid fa-backward-step fa-xl" title="Previous"></i>
+              </div>
+
+              <div onclick="playPause()">
+                <i
+                  class="fa-solid fa-play fa-xl"
+                  style="color: #ffffff"
+                  id="control-icon"
+                  title="Play"
+                ></i>
+              </div>
+
+              <div onclick="nextSong()">
+                <i class="fa-solid fa-forward-step fa-xl" title="Next"></i>
+              </div>
             </div>
           </div>
         </div>
-
         <div class="lyric_box" id="lyric_box"></div>
-        
       </div>
     </div>
   </body>
