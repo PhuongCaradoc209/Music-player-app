@@ -392,9 +392,15 @@
     width: 40%;
 }
 
-.option_bar i {
+.option_bar img {
     cursor: pointer;
+    height: 1.3vw;
 }
+
+.option_bar img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(3px 3px 15px black);
+  }
 
 .audio-bar {
     display: flex;
@@ -414,7 +420,7 @@
 
 #progress {
     -webkit-appearance: none;
-    margin-top: 30px;
+    margin-top: 10px;
     width: 80%;
     height: 1px;
     outline: none;
@@ -464,11 +470,11 @@
 }
 
 .audio-control div:nth-child(1) {
-    color: #898989;
+    color: #bababa;
 }
 
 .audio-control div:nth-child(3) {
-    color: #898989;
+    color: #bababa;
 }
 
 .audio-control div:nth-child(2):hover {
@@ -477,12 +483,12 @@
 
 .audio-control div:nth-child(1):hover {
     transform: scale(1.1);
-    color: rgb(213, 213, 213);
+    color: rgb(239, 239, 239);
 }
 
 .audio-control div:nth-child(3):hover {
     transform: scale(1.1);
-    color: rgb(213, 213, 213);
+    color: rgb(239, 239, 239);
 }
 
 .lyric_box {
