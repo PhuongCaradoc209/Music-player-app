@@ -24,8 +24,9 @@
     </audio>
   </head>
   <body>
+    <div class="wrapper-overlay" id="wrapper-overlay"></div>
     <div class="wrapper">
-      <div class="playlist_box">
+      <div class="playlist_box" id="playlist_box">
         <div class="playlist_heading">
           <div><p>PLAYLIST</p></div>
           <div><p>Title</p></div>
@@ -171,59 +172,71 @@
         </ul>
       </div>
 
-      <div class="playing_box">
-        <div class="playing_box-overlay" id="playing_box-overlay"></div>
-        <div class="playing_heading">
-          <div id="playing_heading-titleSong">
-            <p></p>
+      <div class="playing_lyrics_box" id="playing_lyrics_box">
+        <div class="playing_box" id="playing_box">
+          <div class="playing_header">
+            <i class="fa-solid fa-bars" 
+            style="color: #ffffff;" 
+            title="Playlist"
+            onclick="playlistVisible()"></i>
+
+            <div class="playing_heading">
+              <div id="playing_heading-titleSong">
+                <p></p>
+              </div>
+              <p id="playing_heading-author"></p>
+            </div>
+
+            <i class="fa-solid fa-ellipsis-vertical" 
+            style="color: #ffffff;"
+            title="More"></i>
           </div>
-          <p id="playing_heading-author"></p>
+  
+          <div class="song_record" onclick="lyricsVisible()">
+            <img id="record" src="Image/record.png" alt="record" />
+            <img id="song-image" alt="Song image" />
+          </div>
+  
+          <!-- <div class="option_bar">
+                      <i class="fa-regular fa-heart" style="color: #ffffff;"></i>
+                      <i class="fa-regular fa-comments" style="color: #ffffff;"></i>                
+                  </div> -->
+          <div class="audio-bar">
+            <p id="left_timetrack">00:00</p>
+  
+            <input type="range" value="0" id="progress" />
+            <p id="right_timetrack">00:00</p>
+          </div>
+  
+          <div class="audio-control">
+            <div onclick="previousSong()">
+              <i
+                class="fa-solid fa-backward-step fa-xl"
+                title="Previous"
+              ></i>
+            </div>
+  
+            <div onclick="playPause()">
+              <i
+                class="fa-solid fa-play fa-xl"
+                style="color: #ffffff"
+                id="control-icon"
+                title="Play"
+              ></i>
+            </div>
+  
+            <div onclick="nextSong()"">
+              <i
+                class="fa-solid fa-forward-step fa-xl"
+                title="Next"
+              ></i>
+            </div>
+          </div>
         </div>
 
-        <div class="song_record">
-          <img id="record" src="Image/record.png" alt="record" />
-          <img id="song-image" alt="Song image" />
-        </div>
-
-        <!-- <div class="option_bar">
-                    <i class="fa-regular fa-heart" style="color: #ffffff;"></i>
-                    <i class="fa-regular fa-comments" style="color: #ffffff;"></i>                
-                </div> -->
-        <div class="audio-bar">
-          <p id="left_timetrack">00:00</p>
-
-          <input type="range" value="0" id="progress" />
-          <p id="right_timetrack">00:00</p>
-        </div>
-
-        <div class="audio-control">
-          <div onclick="previousSong()">
-            <i
-              class="fa-solid fa-backward-step fa-xl"
-              style="color: #ffffff"
-              title="previous"
-            ></i>
-          </div>
-
-          <div onclick="playPause()">
-            <i
-              class="fa-solid fa-play fa-xl"
-              style="color: #ffffff"
-              id="control-icon"
-              title="play"
-            ></i>
-          </div>
-
-          <div onclick="nextSong()"">
-            <i
-              class="fa-solid fa-forward-step fa-xl"
-              style="color: #ffffff"
-              title="next"
-            ></i>
-          </div>
-        </div>
+        <div class="lyric_box" id="lyric_box"></div>
+        
       </div>
-      <div class="lyric_box"></div>
     </div>
   </body>
 

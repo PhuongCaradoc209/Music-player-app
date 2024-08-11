@@ -59,8 +59,6 @@ song.addEventListener('loadedmetadata', function () {
     right_timetrack.innerHTML = minutes.toString() + ':' + (seconds < 10 ? "0" + seconds.toString() : seconds.toString());
 });
 
-
-
 setInterval(function () {
     let minutes, seconds;
     minutes = Math.floor(song.currentTime / 60);
@@ -183,7 +181,7 @@ function updateSong(clickedCard){
         song_img.src = record_image.src;
 
         //BACKGROUND UPDATE
-        let box = document.getElementById("playing_box-overlay");
+        let box = document.getElementById("wrapper-overlay");
         box.style.backgroundImage = "url(" + record_image.src + ")";
     }
 
@@ -244,4 +242,37 @@ function previousSong(){
 function updatePlaylist_Heading(){
     let box = document.querySelectorAll('.song_card');
     document.querySelector('#playlist_heading-infor p:nth-child(2)').innerHTML = (box.length).toString() + " songs";
+}
+
+function playlistVisible(){
+    var playlistBox = document.getElementById('playlist_box');
+    var playingLyricsBox = document.getElementById('playing_lyrics_box');
+
+    if (playlistBox.classList.contains('hidden')) {
+        playlistBox.classList.remove('hidden');
+        playlistBox.classList.add('visible');
+        playingLyricsBox.classList.add('shifted');
+    } else {
+        playlistBox.classList.remove('visible');
+        playlistBox.classList.add('hidden');
+        playingLyricsBox.classList.remove('shifted');
+    }
+}   
+
+function lyricsVisible(){
+    var lyricsBox = document.getElementById('lyric_box');
+    var playingBox = document.getElementById('playing_box');
+
+    console.log('lyricsBox:', lyricsBox); // Should not be null
+    console.log('playingBox:', playingBox); // Should not be null
+
+    if (lyricsBox.classList.contains('hidden')) {
+        lyricsBox.classList.remove('hidden');
+        lyricsBox.classList.add('visible');
+        playingBox.classList.add('shifted');
+    } else {
+        lyricsBox.classList.remove('visible');
+        lyricsBox.classList.add('hidden');
+        playingBox.classList.remove('shifted');
+    }
 }
