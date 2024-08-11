@@ -1,21 +1,22 @@
-let currentCard = null;
+var currentCard = null;
 var song = document.getElementById("song");
 
-let progress = document.getElementById("progress");
-let ctrlIcon = document.getElementById("control-icon");
+var progress = document.getElementById("progress");
+var ctrlIcon = document.getElementById("control-icon");
 
-let record = document.getElementById("record");
-let songImg = document.getElementById("song-image");
+var record = document.getElementById("record");
+var songImg = document.getElementById("song-image");
 
-let left_timetrack = document.getElementById("left_timetrack");
-let right_timetrack = document.getElementById("right_timetrack");
+var left_timetrack = document.getElementById("left_timetrack");
+var right_timetrack = document.getElementById("right_timetrack");
+
+updatePlaylist_Heading();
 
 //SET UP 
 song.onloadedmetadata = function () {
     progress.max = song.duration;
     progress.value = song.currentTime;
 }
-
 
 if (song.play()) {
     setInterval(() => {
@@ -57,8 +58,6 @@ song.addEventListener('loadedmetadata', function () {
     let seconds = Math.floor(song.duration % 60);
     right_timetrack.innerHTML = minutes.toString() + ':' + (seconds < 10 ? "0" + seconds.toString() : seconds.toString());
 });
-
-
 
 setInterval(function () {
     let minutes, seconds;
@@ -182,7 +181,7 @@ function updateSong(clickedCard){
         song_img.src = record_image.src;
 
         //BACKGROUND UPDATE
-        let box = document.getElementById("playing_box-overlay");
+        let box = document.getElementById("wrapper-overlay");
         box.style.backgroundImage = "url(" + record_image.src + ")";
     }
 
@@ -204,8 +203,24 @@ function nextSong() {
                 break;
             }
         }
-        i++; //turn to next song
-        updateSong(box.item(i));
+        i++; 
+        if(i < box.length){
+            updateSong(box.item(i));
+        }
+        else{
+            progress.value = 0;
+            song.currentTime = 0;
+
+            ctrlIcon.classList.remove("fa-pause");
+            ctrlIcon.classList.add("fa-play");
+        
+            record.classList.remove("play");
+            songImg.classList.remove("play");
+        
+            record.classList.add("paused");
+            songImg.classList.add("paused");
+        }
+
     }
 }
 
@@ -219,7 +234,45 @@ function previousSong(){
                 break;
             }
         }
-        i--; //turn to next song
+        i--;
         updateSong(box.item(i));
+    }
+}
+
+function updatePlaylist_Heading(){
+    let box = document.querySelectorAll('.song_card');
+    document.querySelector('#playlist_heading-infor span:nth-child(3)').innerHTML = (box.length).toString() + " songs";
+}
+
+function playlistVisible(){
+    var playlistBox = document.getElementById('playlist_box');
+    var playingLyricsBox = document.getElementById('playing_lyrics_box');
+
+    if (playlistBox.classList.contains('hidden')) {
+        playlistBox.classList.remove('hidden');
+        playlistBox.classList.add('visible');
+        playingLyricsBox.classList.add('shifted');
+    } else {
+        playlistBox.classList.remove('visible');
+        playlistBox.classList.add('hidden');
+        playingLyricsBox.classList.remove('shifted');
+    }
+}   
+
+function lyricsVisible(){
+    var lyricsBox = document.getElementById('lyric_box');
+    var playingBox = document.getElementById('playing_box');
+
+    console.log('lyricsBox:', lyricsBox); 
+    console.log('playingBox:', playingBox); 
+
+    if (lyricsBox.classList.contains('hidden')) {
+        lyricsBox.classList.remove('hidden');
+        lyricsBox.classList.add('visible');
+        playingBox.classList.add('shifted');
+    } else {
+        lyricsBox.classList.remove('visible');
+        lyricsBox.classList.add('hidden');
+        playingBox.classList.remove('shifted');
     }
 }
