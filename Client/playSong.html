@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Phonia - playing song</title>
+    <title id="title-web">Phonia - playing song</title>
     <link rel="stylesheet" href="playSong.css" />
 
-    <!--FONT-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ysabeau+SC:wght@1..1000&display=swap"
-      rel="stylesheet"
-    />
-
     <!--ICON-->
+    <link rel="icon" type="image.png" href="Image\icon.png" />
     <script
       src="https://kit.fontawesome.com/c276420fe8.js"
       crossorigin="anonymous"
@@ -205,10 +198,10 @@
 
           <div class="playing_box-features">
             <div class="option_bar">
-              <img title="Add to favourite" src="Icon/heart.png">
-              <img title="Download" src="Icon/download.png">
-              <img title="Comments" src="Icon/comment.png">
-              <img title="Share" src="Icon/share.png">
+              <img title="Add to favourite" src="Icon/heart.png" />
+              <img title="Download" src="Icon/download.png" />
+              <img title="Comments" src="Icon/comment.png" />
+              <img title="Share" src="Icon/share.png" />
             </div>
 
             <div class="audio-bar">
@@ -223,7 +216,7 @@
                 <i class="fa-solid fa-backward-step fa-xl" title="Previous"></i>
               </div>
 
-              <div onclick="playPause()">
+              <div onclick="playPause()" id="audio-control-play">
                 <i
                   class="fa-solid fa-play fa-xl"
                   style="color: #ffffff"

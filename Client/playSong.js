@@ -1,3 +1,5 @@
+var title = document.getElementById("title-web");
+
 var currentCard = null;
 var song = document.getElementById("song");
 
@@ -191,6 +193,9 @@ function updateSong(clickedCard){
     document.getElementById("playing_heading-titleSong").textContent = name_song;
     let author = p[2].textContent;
     document.getElementById("playing_heading-author").textContent = author;
+
+    //UPDATE TITLE WEB
+    title.innerHTML = name_song + " | " + author;
 }
 
 function nextSong() {
