@@ -34,25 +34,28 @@ if (song.pause()) {
     songImg.classList.add("paused");
 }
 
-song.addEventListener('timeupdate', function() {
+song.addEventListener('timeupdate', function () {
     if (song.currentTime === song.duration) {
         nextSong();
     }
 });
 
+
 progress.onchange = function () {
-    song.play();
-    song.currentTime = progress.value;
-    ctrlIcon.classList.remove("fa-play");
-    ctrlIcon.classList.add("fa-pause");
-
-    record.classList.add("play");
-    songImg.classList.add("play");
-
-    record.classList.remove("paused");
-    songImg.classList.remove("paused");
-
-    document.getElementById("control-icon").setAttribute('title', "pause");
+    if(currentCard){
+        song.play();
+        song.currentTime = progress.value;
+        ctrlIcon.classList.remove("fa-play");
+        ctrlIcon.classList.add("fa-pause");
+    
+        record.classList.add("play");
+        songImg.classList.add("play");
+    
+        record.classList.remove("paused");
+        songImg.classList.remove("paused");
+    
+        document.getElementById("control-icon").setAttribute('title', "pause");
+    }
 }
 
 song.addEventListener('loadedmetadata', function () {
@@ -74,7 +77,7 @@ document.getElementById('playlist_box-songs').addEventListener('click', function
     // Kiểm tra nếu phần tử được nhấp là một song_card
     let clickedCard = event.target.closest('.song_card');
     if (clickedCard.id === "song_card") {
-       updateSong(clickedCard);
+        updateSong(clickedCard);
     }
 });
 
@@ -125,37 +128,40 @@ function pauseMusic() {
 }
 
 function playPause() {
-    //playing music
-    if (ctrlIcon.classList.contains("fa-pause")) {
-        song.pause();
-        ctrlIcon.classList.remove("fa-pause");
-        ctrlIcon.classList.add("fa-play");
 
-        record.classList.remove("play");
-        songImg.classList.remove("play");
+    if (currentCard) {
+        //playing music
+        if (ctrlIcon.classList.contains("fa-pause")) {
+            song.pause();
+            ctrlIcon.classList.remove("fa-pause");
+            ctrlIcon.classList.add("fa-play");
 
-        record.classList.add("paused");
-        songImg.classList.add("paused");
+            record.classList.remove("play");
+            songImg.classList.remove("play");
 
-        document.getElementById("control-icon").setAttribute('title', "play");
-    }
-    //stopping music
-    else {
-        song.play();
-        ctrlIcon.classList.remove("fa-play");
-        ctrlIcon.classList.add("fa-pause");
+            record.classList.add("paused");
+            songImg.classList.add("paused");
 
-        record.classList.add("play");
-        songImg.classList.add("play");
+            document.getElementById("control-icon").setAttribute('title', "play");
+        }
+        //stopping music
+        else {
+            song.play();
+            ctrlIcon.classList.remove("fa-play");
+            ctrlIcon.classList.add("fa-pause");
 
-        record.classList.remove("paused");
-        songImg.classList.remove("paused");
+            record.classList.add("play");
+            songImg.classList.add("play");
 
-        document.getElementById("control-icon").setAttribute('title', "pause");
+            record.classList.remove("paused");
+            songImg.classList.remove("paused");
+
+            document.getElementById("control-icon").setAttribute('title', "pause");
+        }
     }
 }
 
-function updateSong(clickedCard){
+function updateSong(clickedCard) {
     currentCard = clickedCard;
     // Toggle lớp "clicked"
     clickedCard.classList.add("clicked");
@@ -195,7 +201,7 @@ function updateSong(clickedCard){
     document.getElementById("playing_heading-author").textContent = author;
 
     //UPDATE TITLE WEB
-    title.innerHTML = name_song + " | " + author;
+    title.innerHTML = name_song + " - " + author + " | Phonia";
 }
 
 function nextSong() {
@@ -204,24 +210,24 @@ function nextSong() {
         let box = document.querySelectorAll('.song_card');
 
         for (; i < box.length; i++) {
-            if(box.item(i) === currentCard){
+            if (box.item(i) === currentCard) {
                 break;
             }
         }
-        i++; 
-        if(i < box.length){
+        i++;
+        if (i < box.length) {
             updateSong(box.item(i));
         }
-        else{
+        else {
             progress.value = 0;
             song.currentTime = 0;
 
             ctrlIcon.classList.remove("fa-pause");
             ctrlIcon.classList.add("fa-play");
-        
+
             record.classList.remove("play");
             songImg.classList.remove("play");
-        
+
             record.classList.add("paused");
             songImg.classList.add("paused");
         }
@@ -229,13 +235,13 @@ function nextSong() {
     }
 }
 
-function previousSong(){
+function previousSong() {
     if (currentCard) {
         var i = 0;
         let box = document.querySelectorAll('.song_card');
 
         for (; i < box.length; i++) {
-            if(box.item(i) === currentCard){
+            if (box.item(i) === currentCard) {
                 break;
             }
         }
@@ -244,12 +250,12 @@ function previousSong(){
     }
 }
 
-function updatePlaylist_Heading(){
+function updatePlaylist_Heading() {
     let box = document.querySelectorAll('.song_card');
     document.querySelector('#playlist_heading-infor span:nth-child(3)').innerHTML = (box.length).toString() + " songs";
 }
 
-function playlistVisible(){
+function playlistVisible() {
     var playlistBox = document.getElementById('playlist_box');
     var playingLyricsBox = document.getElementById('playing_lyrics_box');
 
@@ -262,14 +268,14 @@ function playlistVisible(){
         playlistBox.classList.add('hidden');
         playingLyricsBox.classList.remove('shifted');
     }
-}   
+}
 
-function lyricsVisible(){
+function lyricsVisible() {
     var lyricsBox = document.getElementById('lyric_box');
     var playingBox = document.getElementById('playing_box');
 
-    console.log('lyricsBox:', lyricsBox); 
-    console.log('playingBox:', playingBox); 
+    console.log('lyricsBox:', lyricsBox);
+    console.log('playingBox:', playingBox);
 
     if (lyricsBox.classList.contains('hidden')) {
         lyricsBox.classList.remove('hidden');

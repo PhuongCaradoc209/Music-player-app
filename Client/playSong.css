@@ -1,9 +1,8 @@
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:  Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -17,8 +16,6 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-
-    border: 2px solid rgb(0, 255, 221);
 }
 
 .wrapper-overlay {
@@ -33,8 +30,11 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(5px) brightness(50%);
+
+   
+    filter: blur(10px) brightness(50%);
     z-index: -1;
+
 }
 
 .playlist_box {
@@ -60,6 +60,9 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     overflow: hidden;
     transition: left 0.3s ease;
 }
@@ -172,7 +175,7 @@
 }
 
 .song_card:hover {
-    background-color: #3b3e4428;
+    background-color: #3b3e445c;
     box-shadow: 0 0 10px black;
 }
 
@@ -223,8 +226,6 @@
     align-items: center;
 
     transition: margin-left 0.3s ease;
-
-    border: 2px solid green;
 }
 
 .playing_lyrics_box.shifted {
@@ -243,7 +244,6 @@
     padding: 12px;
 
     overflow: hidden;
-    border: 2px solid rgb(248, 49, 65);
 
     transition: margin-right 0.3s ease;
 }
@@ -259,12 +259,10 @@
 
 .playing_header {
     position: relative;
-    width: 100%;
+    width: 101%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
-    border: 2px solid blue;
 }
 
 .playing_heading {
@@ -282,9 +280,24 @@
     font-size: 1.2vw;
 }
 
-.playing_header i {
+.playing_header img {
     cursor: pointer;
-    transform: scale(1.5);
+    height: 1.8vw;
+}
+
+#playing_header-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+    height: auto;
+    width: 50px;
+    aspect-ratio: 1 / 1;
+}
+
+#playing_header-icon:hover {
+    background-color: rgba(0, 0, 0, 0.151);
 }
 
 #playing_heading-titleSong {
@@ -308,8 +321,6 @@
     align-items: center;
 
     flex-grow: 1;
-
-    border: 2px solid red;
 }
 
 .song_record {
@@ -379,7 +390,6 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    border: 2px solid white;
     height: 17%;
 }
 
@@ -389,7 +399,6 @@
     align-items: center;
 
     transform: scale(1.5);
-    border: 2px solid rgb(255, 5, 47);
     width: 40%;
 }
 
@@ -432,7 +441,7 @@
 }
 
 #progress:hover {
-    opacity: 1;
+    opacity: 1.5;
 }
 
 #progress::-webkit-slider-thumb {
