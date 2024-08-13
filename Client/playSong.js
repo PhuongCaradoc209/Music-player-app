@@ -14,16 +14,38 @@ var right_timetrack = document.getElementById("right_timetrack");
 
 var heart_icon = document.getElementById("heart_icon");
 
+var playing_mode_icon = document.getElementById("audio-control-icon");
+var playing_mode = "none";
+
 updatePlaylist_Heading();
 
 //SET UP 
-
-document.addEventListener('DOMContentLoaded', function() {
-    heart_icon.addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    heart_icon.addEventListener('click', function () {
         if (heart_icon.src.endsWith("Icon/heart.png")) {
             heart_icon.src = "Icon/heart_clicked.png";
         } else {
             heart_icon.src = "Icon/heart.png";
+        }
+    });
+
+    playing_mode_icon.addEventListener('click', function () {
+        if (playing_mode === "none") {
+            playing_mode_icon.src = "Icon/shuffle.png";
+            playing_mode = "shuffle";
+            playing_mode_icon.title = "Shuffle";
+        } else if (playing_mode === "shuffle") {
+            playing_mode_icon.src = "Icon/repeat_all.png";
+            playing_mode_icon.title = "Repeat all";
+            playing_mode = "repeat_all";
+        } else if (playing_mode === "repeat_all") {
+            playing_mode_icon.src = "Icon/repeat_one.png";
+            playing_mode = "repeat_one";
+            playing_mode_icon.title = "Repeat one";
+        } else if (playing_mode === "repeat_one") {
+            playing_mode_icon.src = "Icon/shuffle_disable.png";
+            playing_mode = "none";
+            playing_mode_icon.title = "Disable";
         }
     });
 });
@@ -55,18 +77,18 @@ song.addEventListener('timeupdate', function () {
 
 
 progress.onchange = function () {
-    if(currentCard){
+    if (currentCard) {
         song.play();
         song.currentTime = progress.value;
         ctrlIcon.classList.remove("fa-play");
         ctrlIcon.classList.add("fa-pause");
-    
+
         record.classList.add("play");
         songImg.classList.add("play");
-    
+
         record.classList.remove("paused");
         songImg.classList.remove("paused");
-    
+
         document.getElementById("control-icon").setAttribute('title', "pause");
     }
 }

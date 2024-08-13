@@ -168,7 +168,9 @@
       <div class="playing_lyrics_box" id="playing_lyrics_box">
         <div class="playing_box" id="playing_box">
           <div class="playing_header">
-            <div id="playing_header-icon" onclick="playlistVisible()"><img title="Playlist" src="Icon/3 lines.png" "/></div>
+            <div id="playing_header-icon" onclick="playlistVisible()">
+              <img title="Playlist" src="Icon/3 lines.png" "/>
+            </div>
 
             <div class="playing_heading">
               <div id="playing_heading-titleSong">
@@ -177,7 +179,9 @@
               <p id="playing_heading-author"></p>
             </div>
 
-            <div id="playing_header-icon"><img title="Share" src="Icon/share.png" /></div>
+            <div id="playing_header-icon">
+              <img title="Share" src="Icon/share.png" />
+            </div>
           </div>
 
           <div class="song_record_box">
@@ -189,10 +193,14 @@
 
           <div class="playing_box-features">
             <div class="option_bar">
-              <img title="Add to favourite" src="Icon/heart.png" id="heart_icon" />
+              <img
+                title="Add to favourite"
+                src="Icon/heart.png"
+                id="heart_icon"
+              />
               <img title="Download" src="Icon/download.png" />
               <img title="Comments" src="Icon/comment.png" />
-              <img src="Icon/three_dot.png" alt="More" title="More">
+              <img src="Icon/three_dot.png" alt="More" title="More" />
             </div>
 
             <div class="audio-bar">
@@ -203,21 +211,40 @@
             </div>
 
             <div class="audio-control">
-              <div onclick="previousSong()">
-                <i class="fa-solid fa-backward-step fa-xl" title="Previous"></i>
+              <div id="audio-control-volume">
+                <i class="fa-solid fa-volume-off"></i>
+                <div></div>
               </div>
 
-              <div onclick="playPause()" id="audio-control-play">
-                <i
-                  class="fa-solid fa-play fa-xl"
-                  style="color: #ffffff"
-                  id="control-icon"
-                  title="Play"
-                ></i>
+              <div class="audio-control-main">
+                <div onclick="previousSong()">
+                  <i
+                    class="fa-solid fa-backward-step fa-xl"
+                    title="Previous"
+                  ></i>
+                </div>
+
+                <div onclick="playPause()" id="audio-control-play">
+                  <i
+                    class="fa-solid fa-play fa-xl"
+                    style="color: #ffffff"
+                    id="control-icon"
+                    title="Play"
+                  ></i>
+                </div>
+
+                <div onclick="nextSong()">
+                  <i class="fa-solid fa-forward-step fa-xl" title="Next"></i>
+                </div>
               </div>
 
-              <div onclick="nextSong()">
-                <i class="fa-solid fa-forward-step fa-xl" title="Next"></i>
+              <div id="audio-control-playing-mode">
+                <img
+                  src="Icon/shuffle_disable.png"
+                  alt="Disable"
+                  title="Disable"
+                  id="audio-control-icon"
+                />
               </div>
             </div>
           </div>
