@@ -17,10 +17,14 @@ var heart_icon = document.getElementById("heart_icon");
 var playing_mode_icon = document.getElementById("audio-control-icon");
 var playing_mode = "none";
 
+var volume = document.getElementById("volume-scale");
+
 updatePlaylist_Heading();
+volumeVisible();
 
 //SET UP 
 document.addEventListener('DOMContentLoaded', function () {
+    //HEART ICON
     heart_icon.addEventListener('click', function () {
         if (heart_icon.src.endsWith("Icon/heart.png")) {
             heart_icon.src = "Icon/heart_clicked.png";
@@ -29,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    //VOLUME
     playing_mode_icon.addEventListener('click', function () {
         if (playing_mode === "none") {
             playing_mode_icon.src = "Icon/shuffle.png";
@@ -53,7 +58,38 @@ document.addEventListener('DOMContentLoaded', function () {
 song.onloadedmetadata = function () {
     progress.max = song.duration;
     progress.value = song.currentTime;
+
+    song.volume = 1.0;
+    volume.max = 100;
+
+    volume.value = song.volume * 100;
+
+    let parentDiv = document.getElementById('audio-control-volume');
+    let volume_icon = parentDiv.querySelector('i');
+    volume_icon.classList.remove("fa-volume-low");
+    volume_icon.classList.remove("fa-volume-off");
+    volume_icon.classList.add("fa-volume-high");
 }
+
+volume.addEventListener('input', function () {
+    let parentDiv = document.getElementById('audio-control-volume');
+    let volume_icon = parentDiv.querySelector('i');
+    if (volume.value >= 20 && volume.value < 60) {
+        volume_icon.classList.remove("fa-volume-high");
+        volume_icon.classList.remove("fa-volume-off");
+        volume_icon.classList.add("fa-volume-low");
+    } else if (volume.value >= 0 && volume.value < 20) {
+        volume_icon.classList.remove("fa-volume-low");
+        volume_icon.classList.remove("fa-volume-high");
+        volume_icon.classList.add("fa-volume-off");
+    } else if (volume.value >= 60 && volume.value <= 100) {
+        volume_icon.classList.remove("fa-volume-low");
+        volume_icon.classList.remove("fa-volume-off");
+        volume_icon.classList.add("fa-volume-high");
+    }
+
+    song.volume = ((volume.value) / 100);
+});
 
 if (song.play()) {
     setInterval(() => {
@@ -74,6 +110,7 @@ song.addEventListener('timeupdate', function () {
         nextSong();
     }
 });
+
 
 
 progress.onchange = function () {
@@ -321,4 +358,17 @@ function lyricsVisible() {
         lyricsBox.classList.add('hidden');
         playingBox.classList.remove('shifted');
     }
+}
+
+function volumeVisible() {
+    let parentDiv = document.getElementById('audio-control-volume');
+    let volume = document.getElementById('volume-scale');
+
+    parentDiv.addEventListener("mouseover", function () {
+        volume.classList.add('visible');
+    });
+
+    parentDiv.addEventListener("mouseout", function () {
+        volume.classList.remove('visible');
+    });
 }
