@@ -12,9 +12,22 @@ var songImg = document.getElementById("song-image");
 var left_timetrack = document.getElementById("left_timetrack");
 var right_timetrack = document.getElementById("right_timetrack");
 
+var heart_icon = document.getElementById("heart_icon");
+
 updatePlaylist_Heading();
 
 //SET UP 
+
+document.addEventListener('DOMContentLoaded', function() {
+    heart_icon.addEventListener('click', function() {
+        if (heart_icon.src.endsWith("Icon/heart.png")) {
+            heart_icon.src = "Icon/heart_clicked.png";
+        } else {
+            heart_icon.src = "Icon/heart.png";
+        }
+    });
+});
+
 song.onloadedmetadata = function () {
     progress.max = song.duration;
     progress.value = song.currentTime;
