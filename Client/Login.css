@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Josefin Sans', Ysabeau SC, Mulish;
 }
 
-body{
+body {
     background-image: url("Image/background_Login.gif");
     background-position: center;
     background-size: cover;
@@ -13,36 +13,36 @@ body{
     background-repeat: no-repeat;
 }
 
-.wrapper{
+.wrapper {
     width: 100%;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-.login_Container{
+.login_Container {
     position: relative;
     width: 350px;
     height: 530px;
 
     border-radius: 20px;
-    border:1px solid;
-    
+    border: 1px solid;
+
     color: white;
 
     background: transparent;
     padding: 20px;
     backdrop-filter: blur(25px);
     box-shadow:
-    5px 5px 10px rgba(0, 0, 0, 0.147),
-    -5px -5px 10px rgba(0, 0, 0, 0.147),
-    5px -5px 10px rgba(0, 0, 0, 0.147),
-    -5px 5px 10px rgba(0, 0, 0, 0.147);
+        5px 5px 10px rgba(0, 0, 0, 0.147),
+        -5px -5px 10px rgba(0, 0, 0, 0.147),
+        5px -5px 10px rgba(0, 0, 0, 0.147),
+        -5px 5px 10px rgba(0, 0, 0, 0.147);
 }
 
-.login_heading_box{
+.login_heading_box {
     width: 140px;
     height: 150px;
 
@@ -59,13 +59,13 @@ body{
     transform: translateX(-50%);
 }
 
-#login_heading-text{
+#login_heading-text {
     margin-top: -15px;
     font-size: 45px;
     font-family: Ysabeau SC;
 }
 
-.input_box{
+.input_box {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -74,7 +74,7 @@ body{
     outline: none;
 }
 
-.input-field{
+.input-field {
     height: 42px;
     border-radius: 20px;
     border: none;
@@ -83,7 +83,7 @@ body{
     padding-top: 9px;
 }
 
-.label{
+.label {
     position: absolute;
     top: 18px;
     left: 20px;
@@ -91,40 +91,40 @@ body{
     color: gray;
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
     position: absolute;
     top: 14px;
-    left:  calc(100% - 38px);
+    left: calc(100% - 38px);
     color: rgb(66, 66, 66);
 }
 
-.input-field:focus ~ .label,
-.input-field:valid ~ .label {
-  background-color: #ACB1D6;
-  color: black;
-  position: absolute;
-  top: -5px;
-  left: 20px;
-  height: 20px;
-  font-size: 13px;
-  border-radius: 30px;
-  padding: 4px 10px;
+.input-field:focus~.label,
+.input-field:valid~.label {
+    background-color: #ACB1D6;
+    color: black;
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    height: 20px;
+    font-size: 13px;
+    border-radius: 30px;
+    padding: 4px 10px;
 }
 
-.input-field:valid ~ #input_box-clock {
+.input-field:valid~#input_box-clock {
     display: none;
 }
 
-.warning_box{
+.warning_box {
     margin: 8px;
     color: red;
 }
 
-.remember-forgot{
+.remember-forgot {
     margin: 18px;
     width: calc(100%);
     position: relative;
-    
+
     left: 50%;
     transform: translateX(-55%);
     padding: -5px;
@@ -133,16 +133,16 @@ body{
     font-size: 15px;
 }
 
-a{
+a {
     text-decoration: none;
     color: #9db7fe;
 }
 
-a::hover{
+a::hover {
     text-decoration: underline;
 }
 
-.login_submit_box{
+.login_submit_box {
     margin-top: 28px;
     position: relative;
     border: none;
@@ -151,7 +151,7 @@ a::hover{
     justify-content: center;
 }
 
-.login_submit{
+.login_submit {
     width: 100%;
     height: 40px;
 
@@ -161,29 +161,29 @@ a::hover{
     font-weight: 500;
     color: black;
 
-    background: linear-gradient(to left, #657cbd,#DBDFEA);
+    background: linear-gradient(to left, #657cbd, #DBDFEA);
     cursor: pointer;
 
     transition: 0.5s;
 }
 
-.login_submit:hover{
+.login_submit:hover {
     transform: scale(1.02);
-    background: linear-gradient(to left, #1c419f,#838ccc);
+    background: linear-gradient(to left, #1c419f, #838ccc);
     color: white;
 }
 
-.signUp-box{
+.signUp-box {
     margin: 18px;
     text-align: center;
 }
 
-.signUp{
+.signUp {
     margin-left: 8px;
     background: transparent;
     border: unset;
     font-size: 15px;
-    font-weight:800;
+    font-weight: 800;
 
     cursor: pointer;
     color: green;
@@ -191,6 +191,6 @@ a::hover{
     transition: 0.2s;
 }
 
-.signUp:hover{
+.signUp:hover {
     transform: scale(1.05);
 }
