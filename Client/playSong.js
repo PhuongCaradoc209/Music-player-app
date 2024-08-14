@@ -19,8 +19,9 @@ var playing_mode = "none";
 
 var volume = document.getElementById("volume-scale");
 
-updatePlaylist_Heading();
+set_up();
 volumeVisible();
+none_mode();
 
 //SET UP 
 document.addEventListener('DOMContentLoaded', function () {
@@ -35,22 +36,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //VOLUME
     playing_mode_icon.addEventListener('click', function () {
-        if (playing_mode === "none") {
-            playing_mode_icon.src = "Icon/shuffle.png";
-            playing_mode = "shuffle";
-            playing_mode_icon.title = "Shuffle";
-        } else if (playing_mode === "shuffle") {
-            playing_mode_icon.src = "Icon/repeat_all.png";
-            playing_mode_icon.title = "Repeat all";
-            playing_mode = "repeat_all";
-        } else if (playing_mode === "repeat_all") {
-            playing_mode_icon.src = "Icon/repeat_one.png";
-            playing_mode = "repeat_one";
-            playing_mode_icon.title = "Repeat one";
-        } else if (playing_mode === "repeat_one") {
-            playing_mode_icon.src = "Icon/shuffle_disable.png";
-            playing_mode = "none";
-            playing_mode_icon.title = "Disable";
+        console.log(playing_mode);
+        switch (playing_mode) {
+            case "none":
+                playing_mode_icon.src = "Icon/shuffle.png";
+                playing_mode = "shuffle";
+                playing_mode_icon.title = "Shuffle";
+                shuffle_mode();
+                break;
+            case "shuffle":
+                playing_mode_icon.src = "Icon/repeat_all.png";
+                playing_mode_icon.title = "Repeat all";
+                playing_mode = "repeat_all";
+                break;
+            case "repeat_all":
+                playing_mode_icon.src = "Icon/repeat_one.png";
+                playing_mode = "repeat_one";
+                playing_mode_icon.title = "Repeat one";
+                break;
+            case "repeat_one":
+                playing_mode_icon.src = "Icon/shuffle_disable.png";
+                playing_mode = "none";
+                playing_mode_icon.title = "Disable";
+                none_mode();
+                break;
+            default:
+                break;
         }
     });
 });
@@ -105,14 +116,6 @@ if (song.pause()) {
     songImg.classList.add("paused");
 }
 
-song.addEventListener('timeupdate', function () {
-    if (song.currentTime === song.duration) {
-        nextSong();
-    }
-});
-
-
-
 progress.onchange = function () {
     if (currentCard) {
         song.play();
@@ -126,10 +129,11 @@ progress.onchange = function () {
         record.classList.remove("paused");
         songImg.classList.remove("paused");
 
-        document.getElementById("control-icon").setAttribute('title', "pause");
+        document.getElementById("control-icon").title = "Pause";
     }
 }
 
+//SET TIME FOR PROGRESS
 song.addEventListener('loadedmetadata', function () {
     let minutes = Math.floor(song.duration / 60);
     let seconds = Math.floor(song.duration % 60);
@@ -144,7 +148,7 @@ setInterval(function () {
 }, 500);
 
 
-// Đặt sự kiện click trên phần tử cha chứa các song_card
+//SELECT SONG CARD
 document.getElementById('playlist_box-songs').addEventListener('click', function (event) {
     // Kiểm tra nếu phần tử được nhấp là một song_card
     let clickedCard = event.target.closest('.song_card');
@@ -153,7 +157,7 @@ document.getElementById('playlist_box-songs').addEventListener('click', function
     }
 });
 
-// Đặt thời gian cho mỗi thẻ bài
+//SET TIME FOR SONG CARDS
 document.querySelectorAll('.song_card').forEach((song_card) => {
     let song_audio = song_card.querySelector('audio');
 
@@ -182,7 +186,7 @@ function playMuic() {
     record.classList.remove("paused");
     songImg.classList.remove("paused");
 
-    document.getElementById("control-icon").setAttribute('title', "pause");
+    document.getElementById("control-icon").setAttribute('title', "Pause");
 }
 
 function pauseMusic() {
@@ -322,9 +326,14 @@ function previousSong() {
     }
 }
 
-function updatePlaylist_Heading() {
+function set_up() {
     let box = document.querySelectorAll('.song_card');
     document.querySelector('#playlist_heading-infor span:nth-child(3)').innerHTML = (box.length).toString() + " songs";
+
+    for (let i = 0; i < box.length; i++) {
+        box.item(i).querySelector('#order').innerHTML = i + 1;
+    }
+
 }
 
 function playlistVisible() {
@@ -371,4 +380,26 @@ function volumeVisible() {
     parentDiv.addEventListener("mouseout", function () {
         volume.classList.remove('visible');
     });
+}
+
+function none_mode() {
+    song.addEventListener('timeupdate', function () {
+        if (song.currentTime === song.duration) {
+            nextSong();
+        }
+    });
+}
+
+function shuffle_mode() {
+    let box = document.querySelectorAll('.song_card');
+    let parent = box[0].parentNode;  // Get the parent node of the song cards
+    let j;
+    for (let i = box.length - 1; i >= 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        console.log(i + " " + j);
+        // Swap the DOM elements within their parent
+        parent.insertBefore(box[i], box[j]);
+    }
+    set_up();
+    none();
 }

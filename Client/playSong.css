@@ -478,8 +478,6 @@
     align-items: center;
     height: 40px;
     width: 60%;
-
-    border: 2px solid yellow;
 }
 
 .audio-control div:nth-child(3) img{
@@ -500,7 +498,6 @@
     transition: 0.2s;
     width: 100px;
     height: 30px;
-    border: 2px solid red;
 }
 
 #audio-control-volume:active{
@@ -511,8 +508,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    border: 2px solid green;
     height: 30px;
     width: 70px;
 
@@ -558,7 +553,6 @@
     align-items: center;
     width: 100px;
     height: 30px;
-    border: 2px solid red;
 
     transition: 0.4s;
 }
