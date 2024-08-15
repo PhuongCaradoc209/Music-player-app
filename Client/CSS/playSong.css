@@ -39,7 +39,7 @@
     right: 0;
     bottom: 0;
 
-    background-image: url(Image/background_box.jpg);
+    background-image: url(../Image/background_box.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -480,7 +480,20 @@
     width: 60%;
 }
 
-.audio-control div:nth-child(3) img{
+#audio-control-shuffle,
+#audio-control-repeat{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+
+    transition: 0.2s;
+}
+
+#audio-control-shuffle img,
+#audio-control-repeat img{
     width: 30px;
     height: auto;
     aspect-ratio: 1 / 1;
@@ -488,7 +501,17 @@
     cursor: pointer;
 }
 
-#audio-control-volume{
+#audio-control-repeat img{
+    position: absolute;
+    right: 0;
+}
+
+#audio-control-shuffle:active,
+#audio-control-repeat:active{
+    transform: scale(1.1);
+}
+
+/* #audio-control-volume{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -502,9 +525,9 @@
 
 #audio-control-volume:active{
     cursor: pointer;
-}
+} */
 
-#audio-control-volume div{
+/* #audio-control-volume div{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -544,27 +567,7 @@
 
 #volume-scale::-webkit-slider-thumb:hover {
     transform: scale(1.2);
-}
-
-#audio-control-playing-mode{
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    width: 100px;
-    height: 30px;
-
-    transition: 0.4s;
-}
-
-#audio-control-playing-mode img{
-    position: absolute;
-    right: 0;
-}
-
-#audio-control-playing-mode:active{
-    transform: scale(1.1);
-}
+} */
 
 .audio-control-main{
     display: flex;
@@ -587,23 +590,25 @@
 
 .audio-control-main div:nth-child(1) {
     color: #bababa;
+    transform: scale(0.8);
 }
 
 .audio-control-main div:nth-child(3) {
     color: #bababa;
+    transform: scale(0.8);
 }
 
-.audio-control-main div:nth-child(2):active {
+.audio-control-main div:nth-child(2):hover {
     transform: scale(1.25);
 }
 
-.audio-control-main div:nth-child(1):active {
-    transform: scale(1.1);
+.audio-control-main div:nth-child(1):hover {
+    transform: scale(1);
     color: rgb(239, 239, 239);
 }
 
-.audio-control-main div:nth-child(3):active {
-    transform: scale(1.1);
+.audio-control-main div:nth-child(3):hover {
+    transform: scale(1);
     color: rgb(239, 239, 239);
 }
 

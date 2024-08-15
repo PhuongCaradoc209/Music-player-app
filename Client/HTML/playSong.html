@@ -2,10 +2,10 @@
 <html>
   <head>
     <title id="title-web">Phonia - playing song</title>
-    <link rel="stylesheet" href="playSong.css" />
+    <link rel="stylesheet" href="../CSS/playSong.css" />
 
     <!--ICON-->
-    <link rel="icon" type="image.png" href="Image\icon.png" />
+    <link rel="icon" type="image.png" href="../Image\icon.png" />
     <script
       src="https://kit.fontawesome.com/c276420fe8.js"
       crossorigin="anonymous"
@@ -38,7 +38,7 @@
             <div id="song_card-image">
               <img
                 id="song_card-image"
-                src="Image/Theres_Nothing_Holdin_Me_Back.jpg"
+                src="../Image/Theres_Nothing_Holdin_Me_Back.jpg"
                 alt="Song image"
               />
             </div>
@@ -49,7 +49,7 @@
             <div id="song_card-time">00:00</div>
 
             <audio class="song-audio">
-              <source src="music/There's Nothing Holdin' Me Back.mp3  " />
+              <source src="../music/There's Nothing Holdin' Me Back.mp3  " />
             </audio>
           </li>
 
@@ -60,7 +60,7 @@
             <div id="song_card-image">
               <img
                 id="song_card-image"
-                src="Image/Middle_of_the_Night.jpg"
+                src="../Image/Middle_of_the_Night.jpg"
                 alt="Song image"
               />
             </div>
@@ -71,7 +71,7 @@
             <div id="song_card-time">00:00</div>
 
             <audio class="song-audio">
-              <source src="music\Middle of the Night.mp3" />
+              <source src="../music\Middle of the Night.mp3" />
             </audio>
           </li>
 
@@ -82,7 +82,7 @@
             <div id="song_card-image">
               <img
                 id="song_card-image"
-                src="Image/Shes_Crazy_but_She_s_Mine.jpg"
+                src="../Image/Shes_Crazy_but_She_s_Mine.jpg"
                 alt="Song image"
               />
             </div>
@@ -93,7 +93,7 @@
             <div id="song_card-time">00:00</div>
 
             <audio class="song-audio">
-              <source src="music/She's Crazy but She's Mine.mp3" />
+              <source src="../music/She's Crazy but She's Mine.mp3" />
             </audio>
           </li>
 
@@ -104,7 +104,7 @@
             <div id="song_card-image">
               <img
                 id="song_card-image"
-                src="Image/Jar_of_Love.jpg"
+                src="../Image/Jar_of_Love.jpg"
                 alt="Song image"
               />
             </div>
@@ -115,7 +115,7 @@
             <div id="song_card-time">00:00</div>
 
             <audio class="song-audio">
-              <source src="music/Jar of Love.mp3" />
+              <source src="../music/Jar of Love.mp3" />
             </audio>
           </li>
 
@@ -126,7 +126,7 @@
             <div id="song_card-image">
               <img
                 id="song_card-image"
-                src="Image/Giấc_Mơ_Của_Em_Suy_Ver.jpg"
+                src="../Image/Giấc_Mơ_Của_Em_Suy_Ver.jpg"
                 alt="Song image"
               />
             </div>
@@ -137,7 +137,7 @@
             <div id="song_card-time">00:00</div>
 
             <audio class="song-audio">
-              <source src="music/Giấc Mơ Của Em (Suy Ver.).mp3" />
+              <source src="../music/Giấc Mơ Của Em (Suy Ver.).mp3" />
             </audio>
           </li>
 
@@ -148,7 +148,7 @@
             <div id="song_card-image">
               <img
                 id="song_card-image"
-                src="Image/sài_gòn_hôm_nay_mưa.jpg"
+                src="../Image/sài_gòn_hôm_nay_mưa.jpg"
                 alt="Song image"
               />
             </div>
@@ -159,7 +159,7 @@
             <div id="song_card-time">00:00</div>
 
             <audio class="song-audio">
-              <source src="music/sài gòn hôm nay mưa.mp3" />
+              <source src="../music/sài gòn hôm nay mưa.mp3" />
             </audio>
           </li>
         </ul>
@@ -169,7 +169,7 @@
         <div class="playing_box" id="playing_box">
           <div class="playing_header">
             <div id="playing_header-icon" onclick="playlistVisible()">
-              <img title="Playlist" src="Icon/3 lines.png" "/>
+              <img title="Playlist" src="../Icon/3 lines.png" "/>
             </div>
 
             <div class="playing_heading">
@@ -180,13 +180,13 @@
             </div>
 
             <div id="playing_header-icon">
-              <img title="Share" src="Icon/share.png" />
+              <img title="Share" src="../Icon/share.png" />
             </div>
           </div>
 
           <div class="song_record_box">
             <div class="song_record" onclick="lyricsVisible()">
-              <img id="record" src="Image/record.png" alt="record" />
+              <img id="record" src="../Image/record.png" alt="record" />
               <img id="song-image" alt="Song image" />
             </div>
           </div>
@@ -195,12 +195,12 @@
             <div class="option_bar">
               <img
                 title="Add to favourite"
-                src="Icon/heart.png"
+                src="../Icon/heart.png"
                 id="heart_icon"
               />
-              <img title="Download" src="Icon/download.png" />
-              <img title="Comments" src="Icon/comment.png" />
-              <img src="Icon/three_dot.png" alt="More" title="More" />
+              <img title="Download" src="../Icon/download.png" />
+              <img title="Comments" src="../Icon/comment.png" />
+              <img src="../Icon/three_dot.png" alt="More" title="More" />
             </div>
 
             <div class="audio-bar">
@@ -211,11 +211,20 @@
             </div>
 
             <div class="audio-control">
-              <div id="audio-control-volume">
+              <!-- <div id="audio-control-volume">
                 <i class="fa-solid fa-volume-off"></i>
                 <div>
                   <input type="range" value="0" id="volume-scale" />
                 </div>
+              </div> -->
+
+              <div id="audio-control-shuffle">
+                <img
+                  src="../Icon/shuffle_disable.png"
+                  alt="Disable"
+                  title="Disable"
+                  id="audio-control-shuffle-icon"
+                />
               </div>
 
               <div class="audio-control-main">
@@ -240,12 +249,12 @@
                 </div>
               </div>
 
-              <div id="audio-control-playing-mode">
+              <div id="audio-control-repeat">
                 <img
-                  src="Icon/shuffle_disable.png"
+                  src="../Icon/repeat_disable.png"
                   alt="Disable"
                   title="Disable"
-                  id="audio-control-icon"
+                  id="audio-control-repeat-icon"
                 />
               </div>
             </div>
@@ -256,5 +265,5 @@
     </div>
   </body>
 
-  <script src="playSong.js"></script>
+  <script src="../JS/playSong.js"></script>
 </html>
