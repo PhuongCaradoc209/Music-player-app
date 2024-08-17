@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page | Phonia</title>
+    <link rel="stylesheet" href="../CSS/homePage.css" />
+
+    <!--ICON-->
+    <script
+      src="https://kit.fontawesome.com/c276420fe8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--JS-->
+    <script src="../JS/homePage.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left_box">
+        <div class="account_box">
+          <div><img src="../Image/user_avatar.png" alt="acount-image" /></div>
+          <div>
+            <p id="username">Phuong</p>
+            <div id="account_box-infor">
+              <p>6 followers</p>
+              <span></span>
+              <p>10 follows</p>
+            </div>
+          </div>
+        </div>
+        <div class="library_box">
+          <div class="library_box-header">
+            <div id="library_box-header-title">
+              <p>Library</p>
+            </div>
+
+            <div class="library_box-header-wrapper">
+              <div>
+                <button class="library_box-header-icon" onclick="scroll_left()">
+                  <i
+                    class="fa-solid fa-chevron-left"
+                    style="color: #ffffff"
+                  ></i>
+                </button>
+              </div>
+
+              <div class="library_box-header-cover">
+                <div class="library_box-header-cover-scroll">
+                  <div class="library_box-header-child"><p>Playlists</p></div>
+                  <div class="library_box-header-child"><p>Artists</p></div>
+                  <div class="library_box-header-child"><p>Albums</p></div>
+                  <div class="library_box-header-child"><p>Genres</p></div>
+                  <div class="library_box-header-child">
+                    <p>Listening History</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <button
+                  class="library_box-header-icon"
+                  onclick="scroll_right()"
+                >
+                  <i
+                    class="fa-solid fa-chevron-right"
+                    style="color: #ffffff"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="library_list">
+            <div class="library_list-bar">
+              <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+
+            <div id="library_list-playlistCard">
+              <div id="card-image"><img src="../Image/liked_playlist.png" alt="playlist image" /></div>
+              <div>
+                <span><p>Liked Songs</p></span>
+                <div>
+                  <span><p>Podcast</p></span>
+                  <span></span>
+                  <span><p>Account-name</p></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="mid_box"></div>
+      <div class="right_box"></div>
+    </div>
+  </body>
+</html>
