@@ -14,51 +14,66 @@ var right_timetrack = document.getElementById("right_timetrack");
 
 var heart_icon = document.getElementById("heart_icon");
 
-var playing_mode_icon = document.getElementById("audio-control-icon");
-var playing_mode = "none";
+// var volume = document.getElementById("volume-scale");
 
-var volume = document.getElementById("volume-scale");
-
-set_up();
-volumeVisible();
-none_mode();
-
-//SET UP 
 document.addEventListener('DOMContentLoaded', function () {
-    //HEART ICON
+    let playing_mode_repeat_icon = document.getElementById("audio-control-repeat-icon");
+    let playing_mode_repeat = "disable";
+    let playing_mode_shuffle_icon = document.getElementById("audio-control-shuffle-icon");
+    let playing_mode_shuffle = "disable";
+
+    set_up();
+    // volumeVisible();
+    auto_play();
+
+    // HEART ICON
     heart_icon.addEventListener('click', function () {
         if (heart_icon.src.endsWith("Icon/heart.png")) {
-            heart_icon.src = "Icon/heart_clicked.png";
+            heart_icon.src = "../Icon/heart_clicked.png";
         } else {
-            heart_icon.src = "Icon/heart.png";
+            heart_icon.src = "../Icon/heart.png";
         }
     });
 
-    //VOLUME
-    playing_mode_icon.addEventListener('click', function () {
-        console.log(playing_mode);
-        switch (playing_mode) {
-            case "none":
-                playing_mode_icon.src = "Icon/shuffle.png";
-                playing_mode = "shuffle";
-                playing_mode_icon.title = "Shuffle";
+    // REPEAT MODE
+    playing_mode_repeat_icon.addEventListener('click', function () {
+        console.log(playing_mode_repeat);
+        switch (playing_mode_repeat) {
+            case "disable":
+                playing_mode_repeat_icon.src = "../Icon/repeat_all.png";
+                playing_mode_repeat = "repeat_all";
+                playing_mode_repeat_icon.title = "Repeat all";
+                break;
+            case "repeat_all":
+                playing_mode_repeat_icon.src = "../Icon/repeat_one.png";
+                playing_mode_repeat = "repeat_one";
+                playing_mode_repeat_icon.title = "Repeat one";
+                break;
+            case "repeat_one":
+                playing_mode_repeat_icon.src = "../Icon/repeat_disable.png";
+                playing_mode_repeat = "disable";
+                playing_mode_repeat_icon.title = "Disable";
+                auto_play();
+                break;
+            default:
+                break;
+        }
+    });
+
+    // SHUFFLE MODE
+    playing_mode_shuffle_icon.addEventListener('click', function () {
+        switch (playing_mode_shuffle) {
+            case "disable":
+                playing_mode_shuffle_icon.src = "../Icon/shuffle.png";
+                playing_mode_shuffle = "shuffle";
+                playing_mode_shuffle_icon.title = "Shuffle";
                 shuffle_mode();
                 break;
             case "shuffle":
-                playing_mode_icon.src = "Icon/repeat_all.png";
-                playing_mode_icon.title = "Repeat all";
-                playing_mode = "repeat_all";
-                break;
-            case "repeat_all":
-                playing_mode_icon.src = "Icon/repeat_one.png";
-                playing_mode = "repeat_one";
-                playing_mode_icon.title = "Repeat one";
-                break;
-            case "repeat_one":
-                playing_mode_icon.src = "Icon/shuffle_disable.png";
-                playing_mode = "none";
-                playing_mode_icon.title = "Disable";
-                none_mode();
+                playing_mode_shuffle_icon.src = "../Icon/shuffle_disable.png";
+                playing_mode_shuffle = "disable";
+                playing_mode_shuffle_icon.title = "Disable";
+                auto_play();
                 break;
             default:
                 break;
@@ -70,37 +85,37 @@ song.onloadedmetadata = function () {
     progress.max = song.duration;
     progress.value = song.currentTime;
 
-    song.volume = 1.0;
-    volume.max = 100;
+    // song.volume = 1.0;
+    // volume.max = 100;
 
-    volume.value = song.volume * 100;
+    // volume.value = song.volume * 100;
 
-    let parentDiv = document.getElementById('audio-control-volume');
-    let volume_icon = parentDiv.querySelector('i');
-    volume_icon.classList.remove("fa-volume-low");
-    volume_icon.classList.remove("fa-volume-off");
-    volume_icon.classList.add("fa-volume-high");
+    // let parentDiv = document.getElementById('audio-control-volume');
+    // let volume_icon = parentDiv.querySelector('i');
+    // volume_icon.classList.remove("fa-volume-low");
+    // volume_icon.classList.remove("fa-volume-off");
+    // volume_icon.classList.add("fa-volume-high");
 }
 
-volume.addEventListener('input', function () {
-    let parentDiv = document.getElementById('audio-control-volume');
-    let volume_icon = parentDiv.querySelector('i');
-    if (volume.value >= 20 && volume.value < 60) {
-        volume_icon.classList.remove("fa-volume-high");
-        volume_icon.classList.remove("fa-volume-off");
-        volume_icon.classList.add("fa-volume-low");
-    } else if (volume.value >= 0 && volume.value < 20) {
-        volume_icon.classList.remove("fa-volume-low");
-        volume_icon.classList.remove("fa-volume-high");
-        volume_icon.classList.add("fa-volume-off");
-    } else if (volume.value >= 60 && volume.value <= 100) {
-        volume_icon.classList.remove("fa-volume-low");
-        volume_icon.classList.remove("fa-volume-off");
-        volume_icon.classList.add("fa-volume-high");
-    }
+// volume.addEventListener('input', function () {
+//     let parentDiv = document.getElementById('audio-control-volume');
+//     let volume_icon = parentDiv.querySelector('i');
+//     if (volume.value >= 20 && volume.value < 60) {
+//         volume_icon.classList.remove("fa-volume-high");
+//         volume_icon.classList.remove("fa-volume-off");
+//         volume_icon.classList.add("fa-volume-low");
+//     } else if (volume.value >= 0 && volume.value < 20) {
+//         volume_icon.classList.remove("fa-volume-low");
+//         volume_icon.classList.remove("fa-volume-high");
+//         volume_icon.classList.add("fa-volume-off");
+//     } else if (volume.value >= 60 && volume.value <= 100) {
+//         volume_icon.classList.remove("fa-volume-low");
+//         volume_icon.classList.remove("fa-volume-off");
+//         volume_icon.classList.add("fa-volume-high");
+//     }
 
-    song.volume = ((volume.value) / 100);
-});
+//     song.volume = ((volume.value) / 100);
+// });
 
 if (song.play()) {
     setInterval(() => {
@@ -369,20 +384,20 @@ function lyricsVisible() {
     }
 }
 
-function volumeVisible() {
-    let parentDiv = document.getElementById('audio-control-volume');
-    let volume = document.getElementById('volume-scale');
+// function volumeVisible() {
+//     let parentDiv = document.getElementById('audio-control-volume');
+//     let volume = document.getElementById('volume-scale');
 
-    parentDiv.addEventListener("mouseover", function () {
-        volume.classList.add('visible');
-    });
+//     parentDiv.addEventListener("mouseover", function () {
+//         volume.classList.add('visible');
+//     });
 
-    parentDiv.addEventListener("mouseout", function () {
-        volume.classList.remove('visible');
-    });
-}
+//     parentDiv.addEventListener("mouseout", function () {
+//         volume.classList.remove('visible');
+//     });
+// }
 
-function none_mode() {
+function auto_play() {
     song.addEventListener('timeupdate', function () {
         if (song.currentTime === song.duration) {
             nextSong();
@@ -393,13 +408,42 @@ function none_mode() {
 function shuffle_mode() {
     let box = document.querySelectorAll('.song_card');
     let parent = box[0].parentNode;  // Get the parent node of the song cards
-    let j;
-    for (let i = box.length - 1; i >= 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        console.log(i + " " + j);
-        // Swap the DOM elements within their parent
-        parent.insertBefore(box[i], box[j]);
+    let j, index;
+
+    if(currentCard){
+        for(let i = 0; i < box.length; i++){
+            if(box.item(i) === currentCard){
+                index = i;
+                break;
+            }
+        }
+    
+        for (let i = box.length - 1; i > index; i--) {
+            j = Math.floor(Math.random() * (i - index + 1 + 1) + index + 1);
+            // Swap the DOM elements within their parent
+            parent.insertBefore(box[i], box[j]);
+        }
+    }else{
+        for (let i = box.length - 1; i >= 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            console.log(i + " " + j);
+            // Swap the DOM elements within their parent
+            parent.insertBefore(box[i], box[j]);
+        }
     }
+ 
     set_up();
-    none();
+    auto_play();
+}
+
+
+function repeat_all_mode() {
+    let box = document.querySelectorAll('.song_card');
+    song.addEventListener('timeupdate', function () {
+        if (song.currentTime === song.duration && currentCard === box.item(box.length - 1)) {
+            updateSong(box.item(0));
+        } else {
+            auto_play();
+        }
+    });
 }

@@ -1,0 +1,309 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page | Phonia</title>
+    <link rel="stylesheet" href="../CSS/homePage.css" />
+
+    <!--ICON-->
+    <script
+      src="https://kit.fontawesome.com/c276420fe8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--JS-->
+    <script src="../JS/homePage.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--LEFT BOX-->
+      <div class="left_box">
+        <div class="account_box">
+          <div><img src="../Image/user_avatar.png" alt="acount-image" /></div>
+          <div>
+            <p id="username">Phuong</p>
+            <div id="account_box-infor">
+              <p>6 followers</p>
+              <span></span>
+              <p>10 follows</p>
+            </div>
+          </div>
+        </div>
+        <div class="library_box">
+          <div class="library_box-header">
+            <div id="library_box-header-title">
+              <p>Library</p>
+            </div>
+
+            <div class="library_box-header-wrapper">
+              <div>
+                <button class="library_box-header-icon" onclick="scroll_left()">
+                  <i
+                    class="fa-solid fa-chevron-left"
+                    style="color: #ffffff"
+                  ></i>
+                </button>
+              </div>
+
+              <div class="library_box-header-cover">
+                <div class="library_box-header-cover-scroll">
+                  <div class="library_box-header-child"><p>Playlists</p></div>
+                  <div class="library_box-header-child"><p>Artists</p></div>
+                  <div class="library_box-header-child"><p>Albums</p></div>
+                  <div class="library_box-header-child"><p>Genres</p></div>
+                  <div class="library_box-header-child">
+                    <p>Listening History</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <button
+                  class="library_box-header-icon"
+                  onclick="scroll_right()"
+                >
+                  <i
+                    class="fa-solid fa-chevron-right"
+                    style="color: #ffffff"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="library_list">
+            <div class="library_list-bar">
+              <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+
+            <div id="library_list-playlistCard">
+              <div id="card-image">
+                <img src="../Image/liked_playlist.png" alt="playlist image" />
+              </div>
+              <div id="card-infor">
+                <p id="card-infor-title">Liked Songs</p>
+                <div class="card-infor-text">
+                  <p>Podcast</p>
+                  <span></span>
+                  <p>Account-name</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="library_list-playlistCard">
+              <div id="card-image">
+                <img src="../Image/liked_playlist.png" alt="playlist image" />
+              </div>
+              <div id="card-infor">
+                <p id="card-infor-title">Liked Songs</p>
+                <div class="card-infor-text">
+                  <p>Podcast</p>
+                  <span></span>
+                  <p>Account-name</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="library_list-playlistCard">
+              <div id="card-image">
+                <img src="../Image/liked_playlist.png" alt="playlist image" />
+              </div>
+              <div id="card-infor">
+                <p id="card-infor-title">Liked Songs</p>
+                <div class="card-infor-text">
+                  <p>Podcast</p>
+                  <span></span>
+                  <p>Account-name</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="library_list-playlistCard">
+              <div id="card-image">
+                <img src="../Image/liked_playlist.png" alt="playlist image" />
+              </div>
+              <div id="card-infor">
+                <p id="card-infor-title">Liked Songs</p>
+                <div class="card-infor-text">
+                  <p>Podcast</p>
+                  <span></span>
+                  <p>Account-name</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="library_list-playlistCard">
+              <div id="card-image">
+                <img src="../Image/liked_playlist.png" alt="playlist image" />
+              </div>
+              <div id="card-infor">
+                <p id="card-infor-title">Liked Songs</p>
+                <div class="card-infor-text">
+                  <p>Podcast</p>
+                  <span></span>
+                  <p>Account-name</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="library_list-playlistCard">
+              <div id="card-image">
+                <img src="../Image/liked_playlist.png" alt="playlist image" />
+              </div>
+              <div id="card-infor">
+                <p id="card-infor-title">Liked Songs</p>
+                <div class="card-infor-text">
+                  <p>Podcast</p>
+                  <span></span>
+                  <p>Account-name</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--MID BOX-->
+
+      <div class="mid_box">
+        <div class="mid_box_main" id="mid_box_main">
+          <div class="mid_box_main_heading">
+            <button
+              class="main_heading-cover-button"
+              id="main_heading-cover-button_1"
+            >
+              <i class="fa-solid fa-magnifying-glass" style="color: white"></i>
+            </button>
+            <button class="main_heading-cover-button">
+              <i class="fa-regular fa-bell" style="color: white"></i>
+            </button>
+          </div>
+
+          <div class="mid_box_main_body">
+            <div class="mid_box_main_p1">
+              <div class="mid_box_main_p1-button-wrapper">
+                <button
+                  class="mid_box_main_p1-button"
+                  id="mid_box_main_p1-button-left"
+                  onclick="scroll_left_main_p1()"
+                >
+                  <i
+                    class="fa-solid fa-chevron-left"
+                    style="color: #ffffff"
+                  ></i>
+                </button>
+                <button
+                  class="mid_box_main_p1-button"
+                  id="mid_box_main_p1-button-right"
+                  onclick="scroll_right_main_p1()"
+                >
+                  <i
+                    class="fa-solid fa-chevron-right"
+                    style="color: #ffffff"
+                  ></i>
+                </button>
+              </div>
+              <div class="mid_box_main_p1_scroll">
+                <div class="mid_box_main_p1-card">
+                  <img src="../Image/mid_box_main_p1.jpg" />;
+                </div>
+                <div class="mid_box_main_p1-card">
+                  <img src="../Image/mid_box_main_p1.jpg" />;
+                </div>
+                <div class="mid_box_main_p1-card">
+                  <img src="../Image/mid_box_main_p1.jpg" />;
+                </div>
+                <div class="mid_box_main_p1-card">
+                  <img src="../Image/mid_box_main_p1.jpg" />;
+                </div>
+              </div>
+            </div>
+
+            <div class="mid_box_main_p2" id="mid_box_main_p2">
+              <div class="mid_box_main_p2_heading">
+                <p id="mid_box_main_p2_title"></p>
+                <a src="#"
+                  >More
+                  <i
+                    class="fa-solid fa-chevron-right"
+                    style="color: #ffffff"
+                  ></i>
+                </a>
+              </div>
+              <div class="mid_box_main_p2_features" id="mid_box_main_p2_features">
+                <div class="mid_box_main_p2_features-card">
+                  <div class="mid_box_main_p2-imgAlbums">
+                  </div>
+                  <div class="mid_box_main_p2-inforAlbums"
+                  id="mid_box_main_p2-inforAlbums">
+                    <p>Billie Eilish Mix</p>
+                    <p>Billie Eilish</p>
+                  </div>
+                </div>
+
+                <div class="mid_box_main_p2_features-card">
+                  <div class="mid_box_main_p2-imgAlbums">
+                  </div>
+                  <div class="mid_box_main_p2-inforAlbums"
+                  id="mid_box_main_p2-inforAlbums">
+                    <p>Billie Eilish Mix</p>
+                    <p>Billie Eilish</p>
+                  </div>
+                </div>
+
+                <div class="mid_box_main_p2_features-card">
+                  <div class="mid_box_main_p2-imgAlbums">
+                  </div>
+                  <div class="mid_box_main_p2-inforAlbums"
+                  id="mid_box_main_p2-inforAlbums">
+                    <p>Billie Eilish Mix</p>
+                    <p>Billie Eilish</p>
+                  </div>
+                </div>
+
+                 <div class="mid_box_main_p2_features-card">
+                  <div class="mid_box_main_p2-imgAlbums">
+                  </div>
+                  <div class="mid_box_main_p2-inforAlbums"
+                  id="mid_box_main_p2-inforAlbums">
+                    <p>Billie Eilish Mix</p>
+                    <p>Billie Eilish</p>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mid_box_searching" id="mid_box_searching">
+          <div class="main_heading_searching">
+            <button
+              class="main_heading-cover-button"
+              id="main_heading-cover-button_2"
+            >
+              <i class="fa-solid fa-arrow-left" style="color: white"></i>
+            </button>
+            <div class="main_heading-searchBar">
+              <input
+                type="text"
+                placeholder="What do you want to play?"
+                id="input"
+              />
+              <span id="search-icon"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></span>
+            </div>
+            <div class="main_heading_searching-cover-button">
+              <img src="../Image/microphone.png" />
+            </div>
+          </div>
+
+          <div class="main_body"></div>
+        </div>
+      </div>
+
+      <!--RIGHT BOX-->
+      <div class="right_box"></div>
+    </div>
+  </body>
+</html>
