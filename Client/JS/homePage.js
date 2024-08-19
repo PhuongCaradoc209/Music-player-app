@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("mid_box_main").classList.remove('hide');
         document.getElementById("mid_box_searching").classList.remove('show');
     });
+
+    setInterval(function(){
+        var right = document.querySelector(".mid_box_main_p1_scroll");
+        right.scrollBy({
+            left: 820,
+            behavior: 'smooth'
+        });
+    }, 5000)
 });
 
 function setUp() {
@@ -18,7 +26,6 @@ function setUp() {
     var mid_box_main_p2_title = document.getElementById("mid_box_main_p2_title");
     mid_box_main_p2_title.innerHTML = "For " + username;
 }
-
 
 function scroll_left() {
     var left = document.querySelector(".library_box-header-cover-scroll");
@@ -39,7 +46,7 @@ function scroll_right() {
 function scroll_left_main_p1() {
     var left = document.querySelector(".mid_box_main_p1_scroll");
     left.scrollBy({
-        left: -758,
+        left: -820,
         behavior: 'smooth'
     });
 }
@@ -47,7 +54,7 @@ function scroll_left_main_p1() {
 function scroll_right_main_p1() {
     var right = document.querySelector(".mid_box_main_p1_scroll");
     right.scrollBy({
-        left: 758,
+        left: 820,
         behavior: 'smooth'
     });
 }
