@@ -432,6 +432,7 @@
 
     padding: 12px;
     display: block;
+    overflow: hidden;
 }
 
 .mid_box_main.hide {
@@ -699,9 +700,24 @@
     transition: transform 0.5s ease-in-out;
 
     padding: 8px;
-    font-size: calc(13px*var(--scale));
-    text-align: right;
+    font-size: calc(10px*var(--scale));
+    
+    display: flex;
+    justify-content: flex-end;
     padding-right: 15px;
+}
+
+.mid_box_main_p2-play div{
+    border-radius: 50%;
+    background-color: rgb(78, 78, 225);
+
+    width:  calc(20px*var(--scale));
+    height: auto;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mid_box_main_p2-card:hover .mid_box_main_p2-play{
@@ -729,14 +745,103 @@
     color: rgb(151, 151, 151);
 }
 
+/*mid_box_main_p3-card*/
+.mid_box_main_p3-card{
+    width: 21%;
+
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+
+    cursor: pointer;
+}
+
+.mid_box_main_p3-card:hover{
+    background-color: rgba(255, 255, 255, 0.108);
+}
+
+.mid_box_main_p3-card:hover .mid_box_main_p2-play{
+    transform: translateY(-110px);
+}
+
+.mid_box_main_p3_features-card{
+    position: relative;
+
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.mid_box_main_p3-imgAlbums{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+ 
+    background-image: url(../Image/Artists/billie\ eilish.webp);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mid_box_main_p3-inforAlbums{
+    margin-top: 12px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.mid_box_main_p3-inforAlbums p{
+    margin: 0 4px ;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+.mid_box_main_p3-inforAlbums p:nth-child(1){
+    font-size: calc(8px * var(--scale));
+    font-weight: 550;
+}
+
+.mid_box_main_p3-inforAlbums p:nth-child(2){
+    color: rgb(151, 151, 151);
+}
+
+
 .mid_box_searching {
     width: 100%;
     height: 100%;
 
-    border: 2px solid red;
+    background-color: var(--color-background-element);
 
+    border-radius: 15px;
+
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+
+    overflow-y: auto; 
+    padding: 10px;
+    box-sizing: border-box;
 
     display: none;
 }
@@ -787,25 +892,50 @@
     position: relative;
     width: 50%;
     height: 30px;
-
-    border: 2px solid red;
 }
 
 .main_heading-searchBar i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 8px;
+    left: 16px;
+    color: white;
 }
 
 .main_heading-searchBar input {
     outline: none;
     border: none;
 
-    padding-left: 35px;
+    padding-left: 48px;
     width: 100%;
     height: 100%;
     border-radius: 15px;
+
+    background-color: var(--color-background-element-clicked);
+    color: white;
+}
+
+.main_heading-searchBar input::placeholder{
+    color: rgb(176, 176, 176);
+}
+
+.searching_main_body{
+    width: 100%;
+    height: 91%;
+    border: 2px solid red;
+
+    padding: 12px;
+}
+
+.searching_main_body-history-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searching_main_body-history-heading p{
+    color: white ;
+    font-size: calc(8px * var(--scale));
 }
 
 @media (max-width: 700px) {
