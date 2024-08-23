@@ -14,10 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setInterval(function(){
         var right = document.querySelector(".mid_box_main_p1_scroll");
-        right.scrollBy({
-            left: 820,
-            behavior: 'smooth'
-        });
+        if (right.scrollLeft + right.clientWidth >= right.scrollWidth) {
+            right.scrollTo({ left: 0, behavior: 'smooth' });
+        }else{
+            right.scrollBy({
+                left: 820,
+                behavior: 'smooth'
+            });
+        }
     }, 5000)
 });
 

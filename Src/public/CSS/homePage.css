@@ -9,7 +9,7 @@
     --scale: 2;
     --color-background-element: rgb(45, 45, 45);
     --color-background-leftBox: linear-gradient(to top, #052f99, #838ccc);
-    --color-background-element-clicked: rgb(102, 102, 102);
+    --color-background-element-clicked: rgb(87, 87, 87);
 }
 
 .wrapper {
@@ -223,10 +223,10 @@
     justify-content: center;
     align-items: center;
 
-    width: 80px;
+    width: fit-content;
 
     border-radius: 20px;
-    background-color: rgb(102, 102, 102);
+    background-color: var(--color-background-element-clicked);
     cursor: pointer;
     padding: 5px 10px 5px 10px;
 
@@ -235,6 +235,7 @@
 
 .library_box-header-child p {
     font-size: calc(45% * var(--scale));
+    white-space: nowrap;
 }
 
 .library_box-header-child:hover {
@@ -432,6 +433,7 @@
 
     padding: 12px;
     display: block;
+    overflow: hidden;
 }
 
 .mid_box_main.hide {
@@ -510,6 +512,7 @@
     margin: 24px 0;
 
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .mid_box_main_p1-button-wrapper {
@@ -524,7 +527,11 @@
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;        
+
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 }
 
 .mid_box_main_p1-button {
@@ -535,6 +542,11 @@
     font-size: 30px;
 
     cursor: pointer;
+}
+
+.mid_box_main_p1:hover .mid_box_main_p1-button-wrapper{
+    opacity: 1;
+    visibility: visible;    
 }
 
 #mid_box_main_p1-button-right{
@@ -689,23 +701,41 @@
     background-repeat: no-repeat;
 }
 
-.mid_box_main_p2-play{
+.mid_box_main_p2-play {
     position: absolute;
-
-    bottom: -100px;
+    bottom: -10px;
     left: 0;
     width: 100%;
     height: fit-content;
-    transition: transform 0.5s ease-in-out;
 
+    opacity: 0;
+    visibility: hidden; 
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
     padding: 8px;
-    font-size: calc(13px*var(--scale));
-    text-align: right;
-    padding-right: 15px;
+
+    font-size: calc(10px * var(--scale));
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
 }
 
-.mid_box_main_p2-card:hover .mid_box_main_p2-play{
-    transform: translateY(-110px);
+.mid_box_main_p2-play div{
+    border-radius: 50%;
+    background-color: rgb(78, 78, 225);
+
+    width:  calc(20px*var(--scale));
+    height: auto;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid_box_main_p2-card:hover .mid_box_main_p2-play {
+    transform: translateY(-20px); 
+    opacity: 1;
+    visibility: visible; 
 }
 
 .mid_box_main_p2-inforAlbums{
@@ -729,14 +759,105 @@
     color: rgb(151, 151, 151);
 }
 
+/*mid_box_main_p3-card*/
+.mid_box_main_p3-card{
+    width: 21%;
+
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+
+    cursor: pointer;
+}
+
+.mid_box_main_p3-card:hover{
+    background-color: rgba(255, 255, 255, 0.108);
+}
+
+.mid_box_main_p3-card:hover .mid_box_main_p2-play {
+    transform: translateY(-26px); 
+    opacity: 1;
+    visibility: visible; 
+}
+
+.mid_box_main_p3_features-card{
+    position: relative;
+
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.mid_box_main_p3-imgAlbums{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+ 
+    background-image: url(../Image/Artists/billie\ eilish.webp);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mid_box_main_p3-inforAlbums{
+    margin-top: 12px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.mid_box_main_p3-inforAlbums p{
+    margin: 0 4px ;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+.mid_box_main_p3-inforAlbums p:nth-child(1){
+    font-size: calc(8px * var(--scale));
+    font-weight: 550;
+}
+
+.mid_box_main_p3-inforAlbums p:nth-child(2){
+    color: rgb(151, 151, 151);
+}
+
+
 .mid_box_searching {
     width: 100%;
     height: 100%;
 
-    border: 2px solid red;
+    background-color: var(--color-background-element);
 
+    border-radius: 15px;
+
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+
+    overflow-y: auto; 
+    padding: 10px;
+    box-sizing: border-box;
 
     display: none;
 }
@@ -787,25 +908,105 @@
     position: relative;
     width: 50%;
     height: 30px;
-
-    border: 2px solid red;
 }
 
 .main_heading-searchBar i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 8px;
+    left: 16px;
+    color: white;
 }
 
 .main_heading-searchBar input {
     outline: none;
     border: none;
 
-    padding-left: 35px;
+    padding-left: 48px;
     width: 100%;
     height: 100%;
     border-radius: 15px;
+
+    background-color: var(--color-background-element-clicked);
+    color: white;
+}
+
+.main_heading-searchBar input::placeholder{
+    color: rgb(176, 176, 176);
+}
+
+.searching_main_body{
+    width: 100%;
+    height: fit-content;
+    margin-top: 18px;
+
+    padding: 12px;
+}
+
+.searching_main_body-history{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 14%;
+}
+
+.searching_main_body-history-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding-right: 6px;
+}
+
+.searching_main_body-history-heading p{
+    color: white ;
+    font-size: calc(8px * var(--scale));
+}
+
+.searching_main_body-history-heading i{
+    cursor: pointer;
+    color: rgb(131, 131, 131);
+}
+
+.searching_main_body-history-heading i:hover{
+    color: white;
+}
+
+.searching_main_body-history-content{
+    width: 100%;
+    height: fit-content;
+
+    margin-top: 18px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.searching_main_body-history-content-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    height: fit-content;
+
+    border-radius: 20px;
+    background-color: var(--color-background-element-clicked);
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+
+    margin-right: 28px;
+}
+
+.searching_main_body-history-content-1 p{
+    color: white;
+}
+
+.searching_main_body-history-content-1:hover{
+    background-color: rgb(105, 105, 105);
 }
 
 @media (max-width: 700px) {
