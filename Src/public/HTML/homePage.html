@@ -583,48 +583,66 @@
 
       <!--RIGHT BOX-->
       <div class="right_box">
-        <div class="right_box_body">
-          <div class="right_box_p1">
-            <div class="right_box_p1-heading">
-              <i class="fa-solid fa-ellipsis-vertical"></i>
-              <i class="fa-solid fa-xmark"></i>
-            </div>
-            <div class="right_box_p1-main">
-              <div class="right_box_p1-icon-wrapper">
-                <i class="fa-regular fa-square-plus" id="Add_Playlist" title="Add to Liked Song"></i>
-                <div class="right_box_p1-controls">
-                  <div onclick="previousSong()">
-                    <i
-                      class="fa-solid fa-backward-step fa-xl"
-                      title="Previous"
-                    ></i>
+        <div class="right_box_wrapper">
+          <div class="right_box_body">
+            <div class="right_box_p1">
+              <div class="right_box_p1-heading">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <div class="right_box_p1-main">
+                <div class="right_box_p1-icon-wrapper">
+                  <i
+                    class="fa-regular fa-square-plus"
+                    id="Add_Playlist"
+                    title="Add to Liked Song"
+                  ></i>
+                  <div class="right_box_p1-controls">
+                    <div onclick="previousSong()">
+                      <i
+                        class="fa-solid fa-backward-step fa-xl"
+                        title="Previous"
+                      ></i>
+                    </div>
+  
+                    <div onclick="playPause()" id="audio-control-play">
+                      <i
+                        class="fa-solid fa-play fa-xl"
+                        id="control-icon"
+                        title="Play"
+                      ></i>
+                    </div>
+  
+                    <div onclick="nextSong()">
+                      <i class="fa-solid fa-forward-step fa-xl" title="Next"></i>
+                    </div>
                   </div>
   
-                  <div onclick="playPause()" id="audio-control-play">
-                    <i
-                      class="fa-solid fa-play fa-xl"
-                      id="control-icon"
-                      title="Play"
-                    ></i>
-                  </div>
-  
-                  <div onclick="nextSong()">
-                    <i class="fa-solid fa-forward-step fa-xl" title="Next"></i>
-                  </div>
+                  <i
+                    class="fa-solid fa-up-right-and-down-left-from-center"
+                    id="Expain"
+                  ></i>
                 </div>
   
-                <i class="fa-solid fa-up-right-and-down-left-from-center" id="Expain"></i>
+                <div class="right_box_p1-record">
+                  <img id="record" src="../Image/record.png" alt="record" />
+                  <img
+                    src="..//Image/Giấc_Mơ_Của_Em_Suy_Ver.jpg"
+                    alt="playing song"
+                  />
+                </div>
               </div>
-  
-              <div class="right_box_p1-record">
-                <img id="record" src="../Image/record.png" alt="record" />
-                <img
-                  src="..//Image/Giấc_Mơ_Của_Em_Suy_Ver.jpg"
-                  alt="playing song"
-                />
+              <div class="right_box_p1-titleSong">
+                <p>Giấc Mơ Của Em (Suy Ver.)</p>
+                <p>MYLINA,fueled by boba</p>
               </div>
             </div>
-           
+  
+            <div class="right_box_p2-artist">
+              <div>
+                <div id="right_box_p2-artist-img"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
