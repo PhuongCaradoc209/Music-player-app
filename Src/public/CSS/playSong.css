@@ -47,7 +47,6 @@
    
     filter: blur(10px) brightness(50%);
     z-index: -1;
-
 }
 
 .playlist_box {
@@ -377,7 +376,6 @@
     width: 60%;
     border-radius: 50%;
     object-fit: cover;
-    /* đảm bảo ảnh bao phủ toàn bộ khung hình*/
 }
 
 #record.paused {
