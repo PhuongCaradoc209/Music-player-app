@@ -12,17 +12,21 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("mid_box_searching").classList.remove('show');
     });
 
-    setInterval(function(){
+    setInterval(function () {
         var right = document.querySelector(".mid_box_main_p1_scroll");
-        if (right.scrollLeft + right.clientWidth >= right.scrollWidth) {
-            right.scrollTo({ left: 0, behavior: 'smooth' });
-        }else{
-            right.scrollBy({
-                left: 820,
-                behavior: 'smooth'
-            });
+        if (right) {
+            var mid_box_main_p1_card = document.querySelector('.mid_box_main_p1-card');
+            const imageWidth = mid_box_main_p1_card.offsetWidth;
+            if (right.scrollLeft + right.clientWidth >= right.scrollWidth - 1) {
+                right.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                right.scrollBy({
+                    left: imageWidth+20,
+                    behavior: 'smooth'
+                });
+            }
         }
-    }, 5000)
+    }, 5000);
 });
 
 function setUp() {
@@ -48,17 +52,29 @@ function scroll_right() {
 }
 
 function scroll_left_main_p1() {
-    var left = document.querySelector(".mid_box_main_p1_scroll");
-    left.scrollBy({
-        left: -820,
-        behavior: 'smooth'
-    });
+    var mid_box_main_p1_card = document.querySelector('.mid_box_main_p1-card');
+    if (mid_box_main_p1_card) {
+        const imageWidth = mid_box_main_p1_card.offsetWidth;
+        var left = document.querySelector(".mid_box_main_p1_scroll");
+        left.scrollBy({
+            left: -imageWidth - 20,
+            behavior: 'smooth'
+        });
+    } else {
+        console.error("Element '.mid_box_main_p1-card' not found");
+    }
 }
 
 function scroll_right_main_p1() {
-    var right = document.querySelector(".mid_box_main_p1_scroll");
-    right.scrollBy({
-        left: 820,
-        behavior: 'smooth'
-    });
+    var mid_box_main_p1_card = document.querySelector('.mid_box_main_p1-card');
+    if (mid_box_main_p1_card) {
+        const imageWidth = mid_box_main_p1_card.offsetWidth;
+        var right = document.querySelector(".mid_box_main_p1_scroll");
+        right.scrollBy({
+            left: imageWidth + 20,
+            behavior: 'smooth'
+        });
+    } else {
+        console.error("Element '.mid_box_main_p1-card' not found");
+    }
 }
