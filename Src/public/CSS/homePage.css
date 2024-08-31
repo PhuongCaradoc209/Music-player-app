@@ -1216,8 +1216,9 @@
     position: absolute;
     z-index: 1;
 
-    height: 60%;
-    width: 60%;
+    height: 70%;
+    width: auto;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -1313,9 +1314,12 @@
     }
 }
 
-.right_box_p1-titleSong p:nth-child(1) {
+#right_box_p1-title-text {
     font-size: 30px;
     font-weight: 700;
+}
+
+#right_box_p1-title-text.scrollText{
     animation: scrollText 20s linear infinite;
 }
 
@@ -1328,12 +1332,73 @@
     text-decoration: underline;
 }
 
-.right_box_p2-artist{
-    border: 2px solid red;
+.right_box_p2-wrapper{
     margin-top: 28px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    padding: 8px;
+}
+
+.right_box_p2-wrapper:hover{
+    background-color: rgba(255, 255, 255, 0.096);
+}
+
+.right_box_p2-wrapper:hover #right_box_p2-artist-img{
+    transform: scale(1.1);
+    filter: brightness(1.3);
+}
+
+.right_box_p2-wrapper:hover .right_box_p2-artist-infor{
+    opacity: 1;
+}  
+
+.right_box_p2-artist{
+    border-radius: 15px;
     width: 100%;
     height: auto;
     aspect-ratio: 1/1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#right_box_p2-artist-img{
+    height: 100%;
+    flex: 1;
+
+    background: url(../Image/Artists/tlinh.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.right_box_p2-artist-infor{
+    width: 100%;
+    height: 90px;
+    margin: 8px 0;
+    color: white;
+    opacity: 0.5;
+    overflow: hidden;
+
+    transition: 0.3s ease-in-out;
+}
+
+.right_box_p2-artist-infor p{
+    margin: 8px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Số dòng bạn muốn hiển thị */
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+.right_box_p2-artist-infor p:nth-child(1){
+    font-size: 30;
 }
 
 @media (max-width: 1000px) {

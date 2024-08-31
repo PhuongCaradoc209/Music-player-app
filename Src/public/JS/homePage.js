@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     setUp();
+    check();
 
     document.getElementById("main_heading-cover-button_1").addEventListener('click', function () {
         document.getElementById("mid_box_main").classList.add('hide');
@@ -33,6 +34,18 @@ function setUp() {
     var username = document.getElementById("username").textContent;
     var mid_box_main_p2_title = document.getElementById("mid_box_main_p2_title");
     mid_box_main_p2_title.innerHTML = "For " + username;
+}
+
+function check(){
+    var title = document.querySelector(".right_box_p1-titleSong");
+    if(title){
+        var titleWidth = title.offsetWidth;
+        var titleText = document.getElementById("right_box_p1-title-text");
+        var textWidth = titleText.scrollWidth;
+        if(textWidth > titleWidth){
+            titleText.classList.add("scrollText");
+        }
+    }
 }
 
 function scroll_left() {
