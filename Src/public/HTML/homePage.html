@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../CSS/homePage.css" />
 
     <!--ICON-->
+    <link rel="icon" type="image.png" href="../Image/icon.png"/>
     <script
       src="https://kit.fontawesome.com/c276420fe8.js"
       crossorigin="anonymous"
@@ -585,11 +586,11 @@
       <div class="right_box">
         <div class="right_box_wrapper">
           <div class="right_box_body">
+            <div class="right_box_p1-heading">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+              <i class="fa-solid fa-xmark"></i>
+            </div>
             <div class="right_box_p1">
-              <div class="right_box_p1-heading">
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-                <i class="fa-solid fa-xmark"></i>
-              </div>
               <div class="right_box_p1-main">
                 <div class="right_box_p1-icon-wrapper">
                   <i
@@ -604,7 +605,7 @@
                         title="Previous"
                       ></i>
                     </div>
-  
+
                     <div onclick="playPause()" id="audio-control-play">
                       <i
                         class="fa-solid fa-play fa-xl"
@@ -612,39 +613,49 @@
                         title="Play"
                       ></i>
                     </div>
-  
+
                     <div onclick="nextSong()">
-                      <i class="fa-solid fa-forward-step fa-xl" title="Next"></i>
+                      <i
+                        class="fa-solid fa-forward-step fa-xl"
+                        title="Next"
+                      ></i>
                     </div>
                   </div>
-  
+
                   <i
                     class="fa-solid fa-up-right-and-down-left-from-center"
                     id="Expain"
                   ></i>
                 </div>
-  
-                <div class="right_box_p1-record">
+
+                <a class="right_box_p1-record" href="../HTML/playSong.html">
                   <img id="record" src="../Image/record.png" alt="record" />
                   <img
                     src="..//Image/Albums/người điên.jpg"
                     alt="playing song"
                   />
-                </div>
+                </a>
               </div>
               <div class="right_box_p1-titleSong">
                 <p id="right_box_p1-title-text">Người điên</p>
                 <p>tlinh</p>
               </div>
             </div>
-  
+
             <div class="right_box_p2-wrapper">
               <div class="right_box_p2-artist">
                 <div id="right_box_p2-artist-img"></div>
               </div>
               <div class="right_box_p2-artist-infor">
                 <p>tlinh</p>
-                <p>Tlinh là một nữ rapper nổi bật của Việt Nam, nổi lên từ chương trình "Rap Việt" mùa đầu tiên. Cô được biết đến với phong cách âm nhạc cá tính, độc đáo và thường xuyên kết hợp các yếu tố rap với giai điệu R&B. Tlinh thu hút sự chú ý không chỉ qua kỹ năng rap mà còn qua khả năng viết lời sâu sắc và thể hiện cái tôi mạnh mẽ trong các sản phẩm âm nhạc của mình. </p>
+                <p>
+                  Tlinh là một nữ rapper nổi bật của Việt Nam, nổi lên từ chương
+                  trình "Rap Việt" mùa đầu tiên. Cô được biết đến với phong cách
+                  âm nhạc cá tính, độc đáo và thường xuyên kết hợp các yếu tố
+                  rap với giai điệu R&B. Tlinh thu hút sự chú ý không chỉ qua kỹ
+                  năng rap mà còn qua khả năng viết lời sâu sắc và thể hiện cái
+                  tôi mạnh mẽ trong các sản phẩm âm nhạc của mình.
+                </p>
               </div>
             </div>
           </div>

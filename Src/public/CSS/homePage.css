@@ -1073,7 +1073,7 @@
     background-color: var(--color-background-element);
     border-radius: 15px;
 
-    padding: 12px;
+    padding: 0 12px 12px 12px;
     display: block;
     overflow-y: auto;
 }
@@ -1101,14 +1101,20 @@
 }
 
 .right_box_p1-heading {
+    position: sticky;
+    top: 0;
+
+    z-index: 999;
+    background-color: var(--color-background-element);
     height: 50px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 8px;
 
-    font-size: 22px;
+    margin: 0 -12px; 
+    padding: 12px; 
+    font-size: 22px;    
 }
 
 .right_box_p1-heading p {
@@ -1190,6 +1196,7 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
+    cursor: pointer;
 
     animation: rotate 10s linear infinite;
     box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.304);
@@ -1381,8 +1388,7 @@
     width: 100%;
     height: 90px;
     margin: 8px 0;
-    color: white;
-    opacity: 0.5;
+  
     overflow: hidden;
 
     transition: 0.3s ease-in-out;
@@ -1395,10 +1401,12 @@
     -webkit-line-clamp: 2; /* Số dòng bạn muốn hiển thị */
     overflow: hidden;
     text-overflow:ellipsis;
+    color: rgba(255, 255, 255, 0.347);
 }
 
 .right_box_p2-artist-infor p:nth-child(1){
     font-size: 30;
+    color: white;
 }
 
 @media (max-width: 1000px) {
