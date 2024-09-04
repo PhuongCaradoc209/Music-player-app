@@ -47,7 +47,6 @@
    
     filter: blur(10px) brightness(50%);
     z-index: -1;
-
 }
 
 .playlist_box {
@@ -303,10 +302,15 @@
     justify-content: center;
     align-items: center;
 
-    border-radius: 15px;
+    border-radius: 50%;
     height: auto;
     width: 50px;
     aspect-ratio: 1 / 1;
+    font-size: 25px;
+    color: white;
+
+    cursor: pointer;
+    text-decoration: none;
 }
 
 #playing_header-icon:hover {
@@ -377,7 +381,6 @@
     width: 60%;
     border-radius: 50%;
     object-fit: cover;
-    /* đảm bảo ảnh bao phủ toàn bộ khung hình*/
 }
 
 #record.paused {

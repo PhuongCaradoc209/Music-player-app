@@ -168,9 +168,9 @@
       <div class="playing_lyrics_box" id="playing_lyrics_box">
         <div class="playing_box" id="playing_box">
           <div class="playing_header">
-            <div id="playing_header-icon" onclick="playlistVisible()">
-              <img title="Playlist" src="../Icon/3 lines.png" "/>
-            </div>
+            <a id="playing_header-icon" href="../HTML/homePage.html">
+              <i class="fa-solid fa-chevron-left"></i>
+            </a>
 
             <div class="playing_heading">
               <div id="playing_heading-titleSong">
@@ -193,6 +193,10 @@
 
           <div class="playing_box-features">
             <div class="option_bar">
+              <img title="Playlist"
+              src="../Icon/playlist_icon.png"
+              alt="Playlist"
+              onclick="playlistVisible()">
               <img
                 title="Add to favourite"
                 src="../Icon/heart.png"
