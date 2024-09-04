@@ -190,7 +190,7 @@ document.querySelectorAll('.song_card').forEach((song_card) => {
 });
 
 //FUNCTION
-function playMuic() {
+function playMusic() {
     song.play();
     ctrlIcon.classList.remove("fa-play");
     ctrlIcon.classList.add("fa-pause");
@@ -271,7 +271,7 @@ function updateSong(clickedCard) {
             song.src = source.src;
             song.load();
         }
-        playMuic();
+        playMusic();
     }
     //RECORD IMAGE UPDATE
     let record_image = clickedCard.querySelector('img');

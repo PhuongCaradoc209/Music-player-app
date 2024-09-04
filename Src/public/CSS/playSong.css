@@ -302,10 +302,15 @@
     justify-content: center;
     align-items: center;
 
-    border-radius: 15px;
+    border-radius: 50%;
     height: auto;
     width: 50px;
     aspect-ratio: 1 / 1;
+    font-size: 25px;
+    color: white;
+
+    cursor: pointer;
+    text-decoration: none;
 }
 
 #playing_header-icon:hover {
